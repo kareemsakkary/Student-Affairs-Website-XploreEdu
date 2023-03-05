@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Student Department</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Edit a Student Department</h1>
+    <form action="" method="post">
+      <section>
+        <div>
+          <label for="studid"> ID </label>
+          <input type="text" readonly id="studid" required />
+        </div>
+        <br />
+        <div>
+          <label for="studname"> Name </label>
+          <input type="text" readonly id="studname" required/>
+        </div>
+        <br />
+        <div>
+          <label for="deps"> Department </label>
+          <select name="Department" id="deps" required>
+            <option value="null"> N/A </option>
+            <option value="ComScience">Computer Science</option>
+            <option value="AI">Artificial Intelligence</option>
+            <option value="InfoTech"> Information Technology</option>
+            <option value="cybersec"> Cyber Security</option>
+            <option value="DataSci"> Data Science</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <input type="submit" id="subm">
+        </div>
+      </section>
+    </form>
+  </body>
+</html>
