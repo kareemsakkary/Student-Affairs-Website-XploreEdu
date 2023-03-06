@@ -6,30 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
+    <link rel="icon" type="image/x-icon" href="/img/Logo_circle.png">
+
 </head>
 
 <body>
-    <ul style="display: inline; padding-left:0%">
-        <li style="display: inline; margin-right: 2%;"><a href="/home.html">Home</a></li>
-        <li style="display: inline; margin-right: 2%;"><a href="/add_student.html">Add Students</a></li>
-        <li style="display: inline; margin-right: 2%;"><a href="/view_active.html">View Active Students</a></li>
-        <li style="display: inline; margin-right: 2%;"><a href="/view_all.html">View All Students</a></li>
-    </ul>
-    <h1 style="color:black;"> Student Profile </h1>
-    <img width="280" height="280" src="/img/default pp.png" alt="Default-PP" />
+    <a href="home.html">
+        <img height="150" width="250" src="/img/Logo_croped.png" alt="Website Logo" />
+    </a> 
     <div>
-        <br>
-        <label><strong>Name:</strong> Student Name</label><br>
-        <label><strong>ID:</strong> 20220400</label><br>
-        <label><strong>Date of Birth:</strong> dd/mm/yy </label><br>
-        <label><strong>GPA:</strong> 4</label><br>
-        <label><strong>Gender:</strong> Female</label><br>
-        <label><strong>Level:</strong> 3</label><br>
-        <label><strong>Status:</strong> Active</label><br>
-        <label><strong>Department:</strong> General</label><br>
-        <label><strong>Email:</strong> sample@email.com</label><br>
-        <label><strong>Mobile Number:</strong> 01234567890</label>
+        <ul style="display: inline; padding-left:0%">
+            <li style="display: inline; margin-right: 2%;"><a href="/home.html">Home</a></li>
+            <li style="display: inline; margin-right: 2%;"><a href="/add_student.html">Add Students</a></li>
+            <li style="display: inline; margin-right: 2%;"><a href="/view_active.html">View Active Students</a></li>
+            <li style="display: inline; margin-right: 2%;"><a href="/view_all.html">View All Students</a></li>
+        </ul>
     </div>
+    <h1 style="color:black;"> Student Profile </h1>
+    <div style="display: inline-flex; width: 100%;">
+        <div style="display: inline;">
+            <img width="150" height="150" src="/img/default pp.png" alt="Default-PP" />
+        </div>
+        <div style="display: inline; width: 70%;">
+            <label><strong>Personal Data</strong></label> <br>
+            <div style="margin: 3%;">
+                <label> <strong>  Name:</strong> Student Name</label><br>
+                <label> <strong>  Date of Birth:</strong> dd/mm/yy </label><br>
+                <label> <strong>  Gender:</strong> Female</label><br>
+            </div>
+            <br>
+            <strong>Contact Data</strong>
+            <div style="margin: 3%;">
+                <label><strong>Email:</strong> sample@email.com</label><br>
+                <label><strong>Mobile Number:</strong> 01212156484</label>
+            </div>
+            <br>
+            <strong>Student Info</strong>
+            <div style="margin: 3%;">    
+                <label><strong>ID:</strong> 20220400</label><br>
+                <label><strong>GPA:</strong> 4</label><br>
+                <label><strong>Level:</strong> 3</label><br>
+                <label><strong>Department:</strong> Computer Science</label><br>
+                <label><strong>Status:</strong> Active</label><br>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <button style="width: 100px; margin-left: 25px;" type="submit" name="edit" placeholder="Edit"> <a style="color: black; text-decoration: none;" href="/update.html">Update</a></button>
+
 </body>
 
 </html>
