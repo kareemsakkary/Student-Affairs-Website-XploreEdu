@@ -7,52 +7,62 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
+    <ul style="display: inline; padding-left:0%">
+        <li style="display: inline; margin-right: 2%;"><a href="/home.html">Home</a></li>
+        <li style="display: inline; margin-right: 2%;"><a href="/add_student.html">Add Students</a></li>
+        <li style="display: inline; margin-right: 2%;"><a href="/view_active.html">View Active Students</a></li>
+        <li style="display: inline; margin-right: 2%;"><a href="/view_all.html">View All Students</a></li>
+    </ul>
+    <h1 style="color:black;"> Active Students</h1>
     <input type="search" placeholder="Search">
-    <table>
-        <tr>
-            <th>select</th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>GPA</th>
-            <th>Email</th>
-            <th>Phone</th>
-        </tr>
-        <tr>
-            <td><input type="radio" name="select" value="20210301"></td>
-            <td>20210301</td>
-            <td>Kareem</td>
-            <td>4</td>
-            <td>sample1@mail.com</td>
-            <td>01100000000</td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="select" value="20210362"></td>
-            <td>20210362</td>
-            <td>Waleed</td>
-            <td>4</td>
-            <td>sample2@mail.com</td>
-            <td>01200000000</td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="select" value="20210422"></td>
-            <td>20210422</td>
-            <td>Nada</td>
-            <td>4</td>
-            <td>sample3@mail.com</td>
-            <td>01300000000</td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="select" value="20211053"></td>
-            <td>20211053</td>
-            <td>Shahd</td>
-            <td>4</td>
-            <td>sample4@mail.com</td>
-            <td>01400000000</td>
-        </tr>
-    </table>
-    <div>
-        <input type="submit" name="edit" value="Edit" placeholder="Edit">
-        <input type="submit" name="department" value="Change department" placeholder="change department">
-    </div>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <th>select</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>GPA</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <tr>
+                <td><input type="radio" name="select" value="20210301"></td>
+                <td>20210301</td>
+                <td>Kareem</td>
+                <td>4</td>
+                <td>sample1@mail.com</td>
+                <td>01100000000</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="select" value="20210362"></td>
+                <td>20210362</td>
+                <td>Waleed</td>
+                <td>4</td>
+                <td>sample2@mail.com</td>
+                <td>01200000000</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="select" value="20210422"></td>
+                <td>20210422</td>
+                <td>Nada</td>
+                <td>4</td>
+                <td>sample3@mail.com</td>
+                <td>01300000000</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="select" value="20211053"></td>
+                <td>20211053</td>
+                <td>Shahd</td>
+                <td>4</td>
+                <td>sample4@mail.com</td>
+                <td>01400000000</td>
+            </tr>
+        </table>
+        <div>
+            <button type="submit" name="edit" placeholder="Edit"><a style="color: black; text-decoration: none;" href="/update.html">Edit</a></button>
+            <button type="submit" name="department"  placeholder="Change department"><a style="color: black; text-decoration: none;" href="/department.html">Change department</a></button>
+            <button type="submit" name="profile"  placeholder="open profile"><a style="color: black; text-decoration: none;" href="/profile.html">open profile</a></button>
+        </div>
+    </form>
 </body>
 </html>
