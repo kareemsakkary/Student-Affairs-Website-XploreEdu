@@ -1,0 +1,31 @@
+:root {
+    --primary: #1e90ff;
+    --secondry: #5eae9e;
+    --backgroud: #fff;
+  }
+  body{
+    background-color: var(--backgroud);
+  }
+  /*input css*/
+  .btn{
+    background-color: var(--secondry);
+    color : white;
+    transition: all ease 0.5s;
+  }
+  
+  .btn:hover{
+    background-color: var(--backgroud);
+    color : var(--secondry);
+    border: 1px solid var(--secondry);
+  }
+  .search{
+    padding: 5px;
+  }
+  
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: 1px solid var(--secondry);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem white;
+}

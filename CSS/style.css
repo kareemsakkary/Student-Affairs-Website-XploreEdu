@@ -7,6 +7,18 @@ body{
   background-color: var(--backgroud);
 }
 /*input css*/
+.btn{
+  background-color: var(--secondry);
+  color : white;
+  transition: all ease 0.5s;
+}
+
+.btn:hover{
+  background-color: var(--backgroud);
+  color : var(--secondry);
+  border: 1px solid var(--secondry);
+}
+
 .form__group {
     position: relative;
     padding: 15px 0 0;
