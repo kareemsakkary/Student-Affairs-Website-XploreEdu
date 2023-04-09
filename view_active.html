@@ -23,7 +23,7 @@
     <h1 style="color:black;"> Active Students</h1>
     <input type="search" placeholder="Search">
     <br>
-    <!-- <form  method="post"> -->
+    <form method="get">
         <table>
             <tr>
                 <th>select</th>
@@ -34,7 +34,7 @@
                 <th>Phone</th>
             </tr>
             <tr>
-                <td><input type="radio" name="select" value="20210301"></td>
+                <td><input type="radio" name="id" value="20210301"></td>
                 <td>20210301</td>
                 <td>Kareem</td>
                 <td>4</td>
@@ -42,7 +42,7 @@
                 <td>01100000000</td>
             </tr>
             <tr>
-                <td><input type="radio" name="select" value="20210362"></td>
+                <td><input type="radio" name="id" value="20210362"></td>
                 <td>20210362</td>
                 <td>Waleed</td>
                 <td>4</td>
@@ -50,7 +50,7 @@
                 <td>01200000000</td>
             </tr>
             <tr>
-                <td><input type="radio" name="select" value="20210422"></td>
+                <td><input type="radio" name="id" value="20210422"></td>
                 <td>20210422</td>
                 <td>Nada</td>
                 <td>4</td>
@@ -58,7 +58,7 @@
                 <td>01300000000</td>
             </tr>
             <tr>
-                <td><input type="radio" name="select" value="20211053"></td>
+                <td><input type="radio" name="id" value="20211053"></td>
                 <td>20211053</td>
                 <td>Shahd</td>
                 <td>4</td>
@@ -68,10 +68,10 @@
         </table>
         <br>
         <div>
-            <button type="" name="edit" placeholder="Edit"><a style="color: black; text-decoration: none;" href="update.html">Edit</a></button>
-            <button type="" style="margin-left: 5px;" name="department"  placeholder="Change department"><a style="color: black; text-decoration: none;" href="department.html">Change department</a></button>
-            <button type="" style="margin-left: 5px;" name="profile"  placeholder="open profile"><a style="color: black; text-decoration: none;" href="profile.html">open profile</a></button>
+            <button type="submit"  formaction="update.html" placeholder="Edit">Edit</button>
+            <button type="submit" formaction="department.html" style="margin-left: 5px;"  placeholder="Change department">Change department</button>
+            <button type="submit" formaction="profile.html" style="margin-left: 5px;"  placeholder="open profile">open profile</button>
         </div>
-    <!-- </form> -->
+    </form>
 </body>
 </html>
