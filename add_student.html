@@ -6,36 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add new student</title>
     <link rel="icon" type="image/x-icon" href="img/Logo_circle.png">
+    <link rel="stylesheet" href="CSS/navbar.css">
 
 </head>
 <body>
-  <a href="home.html">
-    <img height="150" width="250" src="img/Logo_croped.png" alt="Website Logo" />
-  </a>   
-  <div >
-      <ul style="display: inline; padding-left:0%">
-          <li style="display: inline; margin-right: 2%;"><a href="home.html">Home</a></li>
-          <li style="display: inline; margin-right: 2%;"><a href="add_student.html">Add Students</a></li>
-          <li style="display: inline; margin-right: 2%;"><a href="view_active.html">View Active Students</a></li>
-          <li style="display: inline; margin-right: 2%;"><a href="view_all.html">View All Students</a></li>
+  <header>
+    <a href="home.html" class="logo"> <img height="100" width="300" src="img/logo.png" alt="Website Logo" /></a>
+    <div class="menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="add_student.html">Add Students</a></li>
+        <li><a href="view_active.html">View Active Students</a></li>
+        <li><a href="view_all.html">View All Students</a></li>
       </ul>
-  </div>
+    </nav>
+  </header>
+
     <h1>Add new student</h1>
 <form action="" method="post">
     <section>
+      d
       <div>
         <label for="profile_image"> profile image </label>
         <input type="file"  id="profile_image" name="image" />
       </div>
+
       <br />
       <div>
         <label for="StudentID"> ID </label>
         <input type="number"  id="StudentID" required />
-      </div>
-      <br />
-      <div>
-        <label for="StudentName"> Name </label>
-        <input type="text"  id="StudentName" required/>
       </div>
       <br />
       <div>
@@ -103,5 +107,8 @@
       </div>
     </section>
   </form>
+  <footer>
+    <p>Copyright &copy; 2023 The President and Fellows of the College</p>
+  </footer>
 </body>
 </html>
