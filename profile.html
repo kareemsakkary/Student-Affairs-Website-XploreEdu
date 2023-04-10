@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Profile</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo_circle.png">
-
-</head>
-<body>
-    <a href="home.html">
-        <img height="150" width="250" src="img/Logo_croped.png" alt="Website Logo" />
-    </a> 
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS</title>
+    <link rel="stylesheet" href="css/profile.css" />
+    <script>
+      function update() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var url = "update.html?id=" + urlParams.get("id");
+        window.location.href = url;
+      }
+    </script>
+  </head>
+  <body>
     <div>
-        <ul style="display: inline; padding-left:0%">
-            <li style="display: inline; margin-right: 2%;"><a href="home.html">Home</a></li>
-            <li style="display: inline; margin-right: 2%;"><a href="add_student.html">Add Students</a></li>
-            <li style="display: inline; margin-right: 2%;"><a href="view_active.html">View Active Students</a></li>
-            <li style="display: inline; margin-right: 2%;"><a href="view_all.html">View All Students</a></li>
-        </ul>
+      <ul style="display: inline; padding-left: 0%">
+        <li style="display: inline; margin-right: 2%">
+          <a href="home.html">Home</a>
+        </li>
+        <li style="display: inline; margin-right: 2%">
+          <a href="add_student.html">Add Students</a>
+        </li>
+        <li style="display: inline; margin-right: 2%">
+          <a href="view_active.html">View Active Students</a>
+        </li>
+        <li style="display: inline; margin-right: 2%">
+          <a href="view_all.html">View All Students</a>
+        </li>
+      </ul>
     </div>
-    <h1 style="color:black;"> Student Profile </h1>
-    <div style="display: inline-flex; width: 100%;">
-        <div style="display: inline;">
-            <img width="150" height="150" src="img/default pp.png" alt="Default-PP" />
+    <div class="container">
+      <div id="header">Student Profile</div>
+      <div class="card">
+        <img src="img/default pp.png" alt="" width="150" />
+        <div class="lower">
+          <div>
+            <button
+              class="btn"
+              type="submit"
+              name="id"
+              id="studid"
+              onclick="update()"
+            >
+              Update
+            </button>
+          </div>
         </div>
-        <div style="display: inline; width: 70%;">
-            <label><strong>Personal Data</strong></label> <br>
-            <div style="margin: 3%;">
-                <label> <strong>  Name:</strong> Student Name</label><br>
-                <label> <strong>  Date of Birth:</strong> dd/mm/yy </label><br>
-                <label> <strong>  Gender:</strong> Female</label><br>
-            </div>
-            <br>
-            <strong>Contact Data</strong>
-            <div style="margin: 3%;">
-                <label><strong>Email:</strong> sample@email.com</label><br>
-                <label><strong>Mobile Number:</strong> 01212156484</label>
-            </div>
-            <br>
-            <strong>Student Info</strong>
-            <div style="margin: 3%;">    
-                <label><strong>ID:</strong> 20220400</label><br>
-                <label><strong>GPA:</strong> 4</label><br>
-                <label><strong>Level:</strong> 3</label><br>
-                <label><strong>Department:</strong> Computer Science</label><br>
-                <label><strong>Status:</strong> Active</label><br>
-            </div>
+      </div>
+      <div class="personalinfo">
+        <div class="infotype">Personal Info</div>
+        <div class="info">
+          <b>Name</b><span>Student Name</span>
+          <hr />
+          <b>Date of Birth</b><span> dd/mm/yy</span>
+          <hr />
+          <b>Gender</b><span> Female</span>
+          <hr />
         </div>
+        <br />
+      </div>
+      <div class="continfo">
+        <div class="infotype">Contact Info</div>
+        <div class="info">
+          <b>Email</b><span> sample@email.com</span>
+          <hr />
+          <b>Mobile Number</b><span> 01212156484</span>
+          <hr />
+          <br />
+        </div>
+      </div>
+      <div class="studinfo">
+        <div class="infotype">Student Info</div>
+        <div class="info">
+          <b>ID</b><span> 20220400</span>
+          <hr />
+          <b>GPA</b><span> 4</span>
+          <hr />
+          <b>Level</b><span> 3</span>
+          <hr />
+          <b>Department</b><span> Computer Science</span>
+          <hr />
+          <b>Status</b><span> Active</span>
+          <hr />
+          <br />
+        </div>
+      </div>
     </div>
-    <br><br>
-    <button style="width: 100px; margin-left: 25px;" type="submit" name="edit" placeholder="Edit"> <a style="color: black; text-decoration: none;" href="update.html">Update</a></button>
-    
-</body>
-
+  </body>
 </html>
