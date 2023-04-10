@@ -1,3 +1,9 @@
+:root {
+    --primary: #560D0D;
+    --secondry: #EEE7E7;
+    --backgroud: #fff;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -5,7 +11,9 @@
     list-style: none;
     box-sizing: border-box;
 }
-
+body:first-child{
+    
+}
 
 header{
     width: 100%;
