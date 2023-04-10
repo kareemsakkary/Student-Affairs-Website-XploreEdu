@@ -4,50 +4,73 @@
     <meta charset="UTF-8" />
     <title>Edit Student Department</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="img/Logo_circle.png">
-
+    <link rel="icon" type="image/x-icon" href="img/Logo_circle.png" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/depart.css" />
   </head>
+
   <body>
-    <a href="home.html">
-      <img height="150" width="250" src="img/Logo_croped.png" alt="Website Logo" />
-  </a> 
-  <div>
-      <ul style="display: inline; padding-left:0%">
-          <li style="display: inline; margin-right: 2%;"><a href="home.html">Home</a></li>
-          <li style="display: inline; margin-right: 2%;"><a href="add_student.html">Add Students</a></li>
-          <li style="display: inline; margin-right: 2%;"><a href="view_active.html">View Active Students</a></li>
-          <li style="display: inline; margin-right: 2%;"><a href="view_all.html">View All Students</a></li>
-      </ul>
-  </div>
-    <h1>Edit a Student Department</h1>
-    <form action="" method="post">
-      <section>
-        <div>
-          <label for="studid"> ID </label>
-          <input type="text" readonly id="studid" required />
+    <header>
+      <a href="home.html" class="logo">
+        <img height="100" width="300" src="img/logo.png" alt="Website Logo"
+      /></a>
+      <div class="menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav class="nav-bar">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="add_student.html">Add Students</a></li>
+          <li><a href="view_active.html">View Active Students</a></li>
+          <li><a href="view_all.html">View All Students</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div id="header">Edit Student Department</div>
+      <form method="get">
+        <div class="form__">
+          <div class="info">
+            <div>
+              <label for="studid"> <b>ID</b> </label>
+              <input
+                class="form-control"
+                type="text"
+                id="studid"
+                name="id"
+                required
+              />
+            </div>
+            <div>
+              <label for="studname"> <b>Name</b> </label>
+              <input class="form-control" type="text" id="studname" required />
+            </div>
+            <div>
+              <label for="deps"> <b>Department</b> </label>
+              <select class="form-control" id="deps" required>
+                <option value="null">N/A</option>
+                <option value="ComScience">Computer Science</option>
+                <option value="AI">Artificial Intelligence</option>
+                <option value="InfoTech">Information Technology</option>
+                <option value="cybersec">Cyber Security</option>
+                <option value="DataSci">Data Science</option>
+              </select>
+            </div>
+          </div>
+          <br />
         </div>
-        <br />
         <div>
-          <label for="studname"> Name </label>
-          <input type="text" readonly id="studname" required/>
+          <button class="btn" type="submit" formaction="profile.html">
+            Update
+          </button>
         </div>
-        <br />
-        <div>
-          <label for="deps"> Department </label>
-          <select name="Department" id="deps" required>
-            <option value="null"> N/A </option>
-            <option value="ComScience">Computer Science</option>
-            <option value="AI">Artificial Intelligence</option>
-            <option value="InfoTech"> Information Technology</option>
-            <option value="cybersec"> Cyber Security</option>
-            <option value="DataSci"> Data Science</option>
-          </select>
-        </div>
-        <br>
-        <div>
-          <input type="submit" id="subm">
-        </div>
-      </section>
-    </form>
+      </form>
+    </div>
+
+    <footer>
+      <p>Copyright &copy; 2023 The President and Fellows of the College</p>
+    </footer>
   </body>
 </html>
