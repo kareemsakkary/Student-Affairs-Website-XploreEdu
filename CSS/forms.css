@@ -1,19 +1,23 @@
-body{
+body {
     background-color: var(--backgroud);
 }
-.horz{
+
+.horz {
     display: inline-flex;
-    width: 100%;
+    width: 95%;
     margin: 1%;
 }
-.horz div{
+
+.horz div {
     margin-left: 2%;
 }
-img{
+
+img {
     align-self: center;
     border-radius: 50%;
     width: 200px;
 }
+
 .btn_form {
     border: 0;
     text-align: center;
@@ -22,6 +26,7 @@ img{
     width: 80%;
     margin-left: 10%;
     margin-top: 2%;
+    margin-bottom: 5%;
     color: #ffffff;
     background-color: var(--primary);
     border-radius: 8px;
@@ -30,61 +35,76 @@ img{
     transition: box-shadow 200ms ease-out;
     cursor: pointer;
 }
-.btn_form:hover{
+
+.btn_form:hover {
     background-color: var(--backgroud);
-    color : var(--primary);
+    color: var(--primary);
     border: 1px solid var(--primary);
 }
-.file-upload-input{
+
+.file-upload-input {
     display: none;
 }
 
-  
+
 .personalinfo,
 .studinfo,
-.continfo{
-  width: 74%;
-  height: 50%;
-  margin-left: 1%;
-  margin-top: 10px;
-  box-shadow: 3px 2px 2px 1px #1514141c;
-  background-color: var(--secondry);
-  overflow: hidden;
-  float: right;
+.continfo {
+    width: 74%;
+    height: 50%;
+    margin-left: 1%;
+    margin-top: 10px;
+    box-shadow: 3px 2px 2px 1px #1514141c;
+    background-color: var(--secondry);
+    overflow: hidden;
+    float: right;
 }
 
-.info{
-  margin-left: 3%;
-  display: flex;
-  flex-direction: column;
+.info {
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
 }
-.info span{
-  text-align: center;
-  color: grey;
+
+.info span {
+    text-align: center;
+    color: grey;
 }
 
 
 .infotype {
-  margin-top: 1;
-  font-weight: bold;
-  font-size: 26px;
-  color: var(--primary);
+    margin-top: 1;
+    font-weight: bold;
+    font-size: 26px;
+    color: var(--primary);
 }
-  
 
-.wrapper{
+.section {
+    margin-bottom: 3%;
+    /* background-color: var(--secondry); */
+    border-radius: 5px;
+    padding: 1%;
+}
+.section:last-child{
+    margin-bottom: 1%;
+
+}
+
+/* radio btn */
+.wrapper {
     margin-top: 15px;
     margin-right: 0px;
     display: inline-flex;
     background: #fff;
-    height: 80px;
+    height: 60px;
     width: 300px;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 5px;
-    padding: 20px 15px;
-  }
-  .wrapper .option{
+    padding: 10px 15px;
+}
+
+.wrapper .option {
     background: #fff;
     height: 100%;
     width: 100%;
@@ -97,49 +117,122 @@ img{
     padding: 0 10px;
     border: 2px solid lightgrey;
     transition: all 0.3s ease;
-  }
-  .wrapper .option .dot{
+}
+
+.wrapper .option .dot {
     height: 20px;
     width: 20px;
     background: #d9d9d9;
     border-radius: 50%;
     position: relative;
-  }
-  .wrapper .option .dot::before{
+}
+
+.wrapper .option .dot::before {
     position: absolute;
     content: "";
     top: 4px;
     left: 4px;
     width: 12px;
     height: 12px;
-    background: #1C75BC;
+    background: var(--primary);
     border-radius: 50%;
     opacity: 0;
     transform: scale(1.5);
     transition: all 0.3s ease;
-  }
-  .wrapper input[type="radio"]{
+}
+
+.wrapper input[type="radio"] {
     display: none;
-  }
-  .wrapper input[type="checkbox"]{
+}
+
+.wrapper input[type="checkbox"] {
     display: none;
-  }
-  .wrapper #option-1:checked:checked ~ .option-1,
-  .wrapper #option-2:checked:checked ~ .option-2{
-    border-color: #1C75BC;
-    background: #1C75BC;
-  }
-  .wrapper #option-1:checked:checked ~ .option-1 .dot,
-  .wrapper #option-2:checked:checked ~ .option-2 .dot{
+}
+
+.wrapper #option-1:checked:checked~.option-1,
+.wrapper #option-2:checked:checked~.option-2 {
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.wrapper #option-1:checked:checked~.option-1 .dot,
+.wrapper #option-2:checked:checked~.option-2 .dot {
     background: #fff;
-  }
-  .wrapper #option-1:checked:checked ~ .option-1 .dot::before,
-  .wrapper #option-2:checked:checked ~ .option-2 .dot::before{
+}
+
+.wrapper #option-1:checked:checked~.option-1 .dot::before,
+.wrapper #option-2:checked:checked~.option-2 .dot::before {
     opacity: 1;
     transform: scale(1);
-  }
-  .wrapper #option-1:checked:checked ~ .option-1 span,
-  .wrapper #option-2:checked:checked ~ .option-2 span{
+}
+
+.wrapper #option-1:checked:checked~.option-1 span,
+.wrapper #option-2:checked:checked~.option-2 span {
     color: #fff;
-  }
-  
+}
+
+/* select */
+.select {
+    margin-left: 2%;
+    position: relative;
+    min-width: 200px;
+    padding-top: 4%;
+}
+
+.select svg {
+    position: absolute;
+    right: 12px;
+    top: calc(70% - 3px);
+    width: 10px;
+    height: 6px;
+    stroke-width: 2px;
+    stroke: #9098a9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+.select select {
+    -webkit-appearance: none;
+    padding: 7px 40px 7px 12px;
+    width: 100%;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 150ms ease;
+}
+
+.select select:required:invalid {
+    color: #5a667f;
+}
+
+.select select option {
+    color: var(--darkprimary);
+}
+
+.select select option[value=""][disabled] {
+    display: none;
+}
+
+.select select:focus {
+    outline: none;
+    border-color: var(--darkprimary);
+    box-shadow: 0 0 0 2px var(--darkprimary);
+}
+
+.select select:hover+svg {
+    stroke: var(--darkprimary);
+}
+
+.sprites {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+}

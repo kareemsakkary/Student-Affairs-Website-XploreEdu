@@ -1,5 +1,6 @@
 :root {
     --primary: #560D0D;
+    --darkprimary:#2b0606;
     --secondry: #EEE7E7;
     --backgroud: #fff;
 }
@@ -10,9 +11,6 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-}
-body:first-child{
-    
 }
 
 header{

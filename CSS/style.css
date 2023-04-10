@@ -61,7 +61,7 @@ body{
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: var(--secondry);
+    color: var(--primary);
     font-weight: 700;
   }
   /* reset input */
