@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Students Affair Website</title>
-    <meta name="Description" content="Students Affair Homepage" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="img/Logo_circle.png">
-    <link rel="stylesheet" href="CSS/style.css">
-  </head>
-  <body>
-   
-    <header>
-      <nav>
-      <a href="home.html">
-          <img height="150" width="250" src="img/Logo_croped.png" alt="Website Logo" />
-      </a> 
-      <h1 style="margin-bottom: 0%;">
-          Welcome to our Website!
-        </h1>
-        <p  style="color: rgb(92, 92, 92); margin-left : 0%; margin-top: 0%;">
-          <strong> This is Website`s Homepage </strong>
-        </p>
-        <div id="links">
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <br>
-            <li><a href="add_student.html">Add Students</a></li>
-            <br>
-            <li><a href="view_active.html">View Active Students</a></li>
-            <br>
-            <li><a href="view_all.html">View All Students</a></li>
-            <br>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <div class="form__group field formIn"  >
-      <input type="text"  autocomplete="off" name="studentName" class="form__field" placeholder="اسم" required />
-      <label for="studentName" class="form__label">Student name</label>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>XploreEdu</title>
+  <meta name="Description" content="Students Affair Homepage" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/img/icon.png">
+  <link rel="stylesheet" href="styleHome.css">
+</head>
+
+<body>
+  <header>
+    <a href="/home.html" class="logo"> <img height="100" width="300" src="/img/logo.png" alt="Website Logo" /></a>
+    <div class="menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-  </body>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="/home.html">Home</a></li>
+        <li><a href="/add_student.html">Add Students</a></li>
+        <li><a href="/view_active.html">View Active Students</a></li>
+        <li><a href="/view_all.html">View All Students</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <p> <span>XploreEdu </span>
+      provides support to a college system so that they can serve the students and their university better.
+      As student affairs is an ever-evolving field, our staff do their best practices in order
+      to keep up with the latest trends, research, and policy, as well as ensure that the universities remain
+      professional in the workplace.
+    </p>
+  </section>
+  <footer>
+    <p>Copyright &copy; 2023 The President and Fellows of the College</p>
+  </footer>
+  <script src="home.js"></script>
+</body>
+
 </html>
