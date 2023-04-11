@@ -1,8 +1,9 @@
 body{
-  background-color: #e2e8f0;
+  background-color: #FFF ;
+  /* e2e8f0  D1D0D1*/
 }
 hr{
-  border-top: 1px solid #d6d6d6d6;
+  border-top: 1px solid var(--secondry);
 }
 
 
@@ -16,12 +17,16 @@ hr{
 
 
 .card{
-  width: 25%;
+  width: 24%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   float: left;
   overflow: auto;
+  border-radius: 5px;
+  background-color: #FFF;
+  padding: 1%;
+  margin-left: 1%;
 }
 
 .card img{
@@ -46,10 +51,12 @@ hr{
   height: 50%;
   margin-left: 1%;
   margin-top: 10px;
-  box-shadow: 3px 2px 2px 1px #1514141c;
+  /* box-shadow: 3px 2px 2px 1px #1514141c; */
   background-color: var(--backgroud);
   overflow: hidden;
   float: right;
+  border-radius: 5px;
+
 }
 .studinfo{
   margin-bottom: 10%;
@@ -67,9 +74,10 @@ hr{
 
 
 .infotype {
-  text-align: center;
+  text-align: left;
   margin: 10px;
-  margin-left: 4%;
+  margin-left: 2%;
+  margin-bottom: 3%;
   font-weight: bold;
   font-size: 26px;
   color: var(--primary);
@@ -82,7 +90,7 @@ hr{
   border-radius: 10px;
   background-color: var(--primary);
   color : white;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   font-size: 15px;
   font-weight: 400;
 }

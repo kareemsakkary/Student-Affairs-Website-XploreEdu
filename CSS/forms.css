@@ -80,10 +80,12 @@ div img {
 }
 
 .section {
-    margin-bottom: 3%;
-    /* background-color: var(--secondry); */
+    margin-bottom: 2%;
+    background-color: var(--backgroud);
     border-radius: 5px;
-    padding: 1%;
+    padding: 2%;
+    /* background-color: #5a667f; */
+
 }
 .section:last-child{
     margin-bottom: 1%;
@@ -235,4 +237,9 @@ div img {
     height: 0;
     pointer-events: none;
     user-select: none;
+}
+@media(max-width: 1035px){
+    .nav-bar.active{
+        margin-bottom: 250px;
+    }
 }

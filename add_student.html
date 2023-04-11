@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add new student</title>
-  <link rel="icon" type="image/x-icon" href="img/Logo_circle.png">
+  <link rel="icon" type="image/x-icon" href="img/icon.png">
   <link rel="stylesheet" href="CSS/navbar.css">
   <link rel="stylesheet" href="CSS/forms.css">
   <link rel="stylesheet" href="CSS/style.css">
-  <script src="JS/forms.js"></script>
+ 
 </head>
 
 <body>
@@ -52,7 +52,7 @@
             <div class="horz" style="width: 100%; margin-left: 0%;">
               <div class="form__group field formIn" style="width: 60%;">
                 <input type="date" min="1950-01-01" max="2010-01-01" autocomplete="off" name="studentBirthdate"
-                  class="form__field" placeholder="تاريخ الميلاد" required />
+                  class="form__field" placeholder="studentBirthdate" required />
                 <label for="studentBirthdate" class="form__label">Birth Date</label>
               </div>
               <div class="wrapper" style="width:40%;">
@@ -81,7 +81,7 @@
             </div>
             <br>
             <div class="form__group field formIn">
-              <input type="tel" autocomplete="off" name="StudentPhone" class="form__field" placeholder="Phone"
+              <input type="tel" autocomplete="off" minlength="11" maxlength="11" onkeypress='validate(event)' name="StudentPhone" class="form__field" placeholder="Phone"
                 required />
               <label for="StudentPhone" class="form__label">Student Phone</label>
             </div>
@@ -140,7 +140,9 @@
   <footer>
     <p>Copyright &copy; 2023 The President and Fellows of the College</p>
   </footer>
-
+  <script src="JS/forms.js"></script>
+  <script src="JS/main.js"></script>
+  <script src="JS/home.js"></script>
 </body>
 
 </html>
