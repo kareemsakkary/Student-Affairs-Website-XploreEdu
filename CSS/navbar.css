@@ -72,8 +72,7 @@ footer p{
         margin: 6px 0;
     }
     .nav-bar{
-        height: 250px;
-        visibility: hidden;
+        height: 0px;
         position: absolute;
         top: 80px;
         left: 0;
@@ -88,7 +87,7 @@ footer p{
         margin-bottom: 250px;
     }
     .nav-bar.active{
-        visibility: visible;
+        height: 250px;
     }
     .nav-bar ul{
         display: block;
