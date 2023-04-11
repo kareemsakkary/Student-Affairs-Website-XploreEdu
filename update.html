@@ -5,61 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Data</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo_circle.png">
+    <link rel="icon" type="image/x-icon" href="img/icon.jpg">
+    <link rel="stylesheet" href="update.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <script src="update.js"></script>
 
 </head>
 <body>
-  <a href="home.html">
-    <img height="150" width="250" src="img/Logo_croped.png" alt="Website Logo" />
-  </a>  
-   <div>
-        <ul style="display: inline; padding-left:0%">
-            <li style="display: inline; margin-right: 2%;"><a href="home.html">Home</a></li>
-            <li style="display: inline; margin-right: 2%;"><a href="add_student.html">Add Students</a></li>
-            <li style="display: inline; margin-right: 2%;"><a href="view_active.html">View Active Students</a></li>
-            <li style="display: inline; margin-right: 2%;"><a href="view_all.html">View All Students</a></li>
-        </ul>
+  <header>
+    <a href="/home.html" class="logo"> <img height="100" width="300" src="img/icon.jpg" alt="Website Logo" /></a>
+    <div class="menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-<h1>Update a student data</h1>
-<form  method="post">
-    <section>
-      <div>
-        <label for="profile_image"> profile image </label>
-        <input type="file"  id="profile_image" name="image" />
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="/home.html">Home</a></li>
+        <li><a href="/add_student.html">Add Students</a></li>
+        <li><a href="/view_active.html">View Active Students</a></li>
+        <li><a href="/view_all.html">View All Students</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form method="post" onsubmit="return validateForm()">
+  <br>
+    <section class="container">
+      <h1>Update student data</h1>
+     <hr>
+     <br>
+     <br>
+<h2> Personal Info. </h2>
+<br><br>
+<div class="image">
+    <img src="img/default pp.png" >
+    <div >
+    <label for="profile_image"> Change profile image </label>
+    <input type="file"  id="profile_image" name="image" />
+    </div>
+</div>
+<br>
+<br>
+      <div class ="field" >
+        <input type="number" min="0" step="1" id="StudentID" required  />
+        <label for="StudentID" > ID </label>
       </div>
       <br />
-      <div>
-        <label for="StudentID"> ID </label>
-        <input type="number"  id="StudentID" required />
-      </div>
-      <br />
-      <div>
+      <div class ="field">
+        <input type="text"  id="StudentName" required />
         <label for="StudentName"> Name </label>
-        <input type="text"  id="StudentName" required/>
       </div>
       <br />
       <div>
         <label for="StudentBDate"> Birth Date </label>
         <input type="date"  id="StudentBDate" required/>
       </div>
-      <br />
-      <div>
-        <label for="StudentGPA"> GPA </label>
-        <input type="number" step="any"  id="StudentBDate" required />
-      </div>
-      <br />
-      <div>
-        <label for="gender"> Gender </label>
-        <select name="Gender" id="gender" required>
-          <option value="null"> N/A </option>
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-        </select>
-      </div>
       <br>
-      <div>
-        <label for="level"> Level </label>
+      <div >
+        <p >Gender</p>
+         <label for="male" id="malelabel" >
+          <input type="radio" id="male" name="gender" value="male">
+          Male
+        </label><br>
+         <label for="female" id="femalelabel" >
+          <input type="radio" id="female" name="gender" value="female">
+          Female
+        </label><br>
+      </div>
+      <br />
+      <br>
+<h2> Educational Info. </h2>
+<br><br>
+      <div class ="field">
+        <input type="number" min="0"max="4" step="any"  id="StudentGPA" required/>
+        <label for="StudentGPA"> GPA </label>
+      </div>
+      <br >
+      <div >
+        <label for="level" > Level </label>
         <select name="Level" id="level" required>
+          <option value="">--Please choose an option--</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -68,35 +93,43 @@
         </select>
       </div>
       <br>
-      <div>
+      <div >
+
         <label for="status"> Status </label>
-        <select name="Status" id="status" required>
+        <select name="Status" class="inp" id="status" required>
+          <option value="">--Please choose an option--</option>
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
         </select>
       </div>
       <br>
-      <div>
+      <div >
         <label for="deps"> Department </label>
-        <input type="text" value="Computer Science" readonly id="deps" required/>
+        <input type="text" class="readOnly" value="Computer Science" readonly id="deps" />
       </div>
-      <br>
-      <div>
+      <br><br>
+      <h2> Contact Info. </h2>
+<br><br>
+      <div class ="field">
+        <input type="tel" class="inp"  id="StudentNumber" required/>
         <label for="StudentNumber"> Phone Number </label>
-        <input type="tel"  id="StudentNumber" />
       </div>
       <br />
-      <div>
+      <div class ="field">
+        <input type="email" class="inp" id="StudentEmail" required />
         <label for="StudentEmail"> Email </label>
-        <input type="email" id="StudentEmail" required />
       </div>
+    
       <br />
       <div>
-        <input type="submit" name="delete" value="Delete student" placeholder="Delete student">
-        <input type="submit" name="submit" value="Submit" placeholder="Submit">
+        <input type="submit" name="submit" value="Submit" placeholder="Submit" id="submit">
+        <input type="submit" name="delete" value="Delete student" placeholder="Delete student" id="delete">
 
       </div>
     </section>
   </form>
+  <footer>
+    <p>Copyright &copy; 2023 The President and Fellows of the College </p> 
+  </footer>
 </body>
 </html>
