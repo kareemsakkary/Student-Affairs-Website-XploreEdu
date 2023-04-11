@@ -5,13 +5,6 @@
     <title>CSS</title>
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/profile.css" />
-    <script>
-      function update() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var url = "update.html?id=" + urlParams.get("id");
-        window.location.href = url;
-      }
-    </script>
   </head>
   <body>
     <header>
@@ -38,26 +31,23 @@
         <img src="img/default pp.png" alt="" width="150" />
         <div class="lower">
           <div>
-            <button
-              class="btn"
-              type="submit"
-              name="id"
-              id="studid"
-              onclick="update()"
-            >
-              Update
-            </button>
+            <form method="get">
+              <input type="hidden" name="id" id="submit_id">
+              <button class="btn" type="submit" onclick="update()" formaction="update.html">
+                Update
+              </button>
+            </form>
           </div>
         </div>
       </div>
       <div class="personalinfo">
         <div class="infotype">Personal Info</div>
         <div class="info">
-          <b>Name</b><span>Student Name</span>
+          <b>Name</b><label for="studname">Student Name</label>
           <hr />
-          <b>Date of Birth</b><span> dd/mm/yy</span>
+          <b>Date of Birth</b><label for="studbirth"> dd/mm/yy</label>
           <hr />
-          <b>Gender</b><span> Female</span>
+          <b>Gender</b><label for="studgender"> Female</label>
           <hr />
         </div>
         <br />
@@ -65,9 +55,9 @@
       <div class="continfo">
         <div class="infotype">Contact Info</div>
         <div class="info">
-          <b>Email</b><span> sample@email.com</span>
+          <b>Email</b><label for="studmail"> sample@email.com</label>
           <hr />
-          <b>Mobile Number</b><span> 01212156484</span>
+          <b>Mobile Number</b><label for="studphone"> 01212156484</label>
           <hr />
           <br />
         </div>
@@ -75,15 +65,15 @@
       <div class="studinfo">
         <div class="infotype">Student Info</div>
         <div class="info">
-          <b>ID</b><span> 20220400</span>
+          <b>ID</b><label for="studid"> 20220400</label>
           <hr />
-          <b>GPA</b><span> 4</span>
+          <b>GPA</b><label for="gpa"> 4</label>
           <hr />
-          <b>Level</b><span> 3</span>
+          <b>Level</b><label for="lvl"> 3</label>
           <hr />
-          <b>Department</b><span> Computer Science</span>
+          <b>Department</b><label for="depart"> Computer Science</label>
           <hr />
-          <b>Status</b><span> Active</span>
+          <b>Status</b><label for="status"> Active</label>
           <hr />
           <br />
         </div>
@@ -94,5 +84,6 @@
         <p>Copyright &copy; 2023 The President and Fellows of the College</p>
       </footer>
     </div>
+    <script src="JS/profile.js"></script>
   </body>
 </html>

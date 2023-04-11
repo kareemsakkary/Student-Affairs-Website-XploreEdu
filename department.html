@@ -34,18 +34,21 @@
         <div class="form__">
           <div class="info">
             <div>
-              <label for="studid"> <b>ID</b> </label>
-              <input
-                class="form-control"
-                type="text"
-                id="studid"
-                name="id"
-                required
-              />
+              <b>ID</b>
+              <p>
+                <label id="studid" for="id"> 20210362 </label>
+                <input type="hidden" name="id" id="submit_id">
+              </p>
+              <hr />
             </div>
             <div>
-              <label for="studname"> <b>Name</b> </label>
-              <input class="form-control" type="text" id="studname" required />
+              <b>Name</b>
+              <p>
+                <label id="studname" for="studname">
+                  Mohamed Waleed Mohamed Abdelraheem
+                </label>
+              </p>
+              <hr />
             </div>
             <div>
               <label for="deps"> <b>Department</b> </label>
@@ -58,19 +61,20 @@
                 <option value="DataSci">Data Science</option>
               </select>
             </div>
+            
           </div>
+          
           <br />
         </div>
-        <div>
-          <button class="btn" type="submit" formaction="profile.html">
-            Update
-          </button>
-        </div>
+        <button class="btn" type="submit" onclick="update()" formaction="profile.html">
+          Update
+        </button>    
       </form>
     </div>
 
     <footer>
       <p>Copyright &copy; 2023 The President and Fellows of the College</p>
     </footer>
+    <script src="JS/depart.js"></script>
   </body>
 </html>
