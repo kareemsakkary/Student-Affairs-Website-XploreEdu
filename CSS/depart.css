@@ -1,5 +1,6 @@
 body{
-    background-color: #e2e8f0;
+    background-color: #fff;
+    /*#e2e8f0*/
 }
 hr{
     border-top: 2px solid var(--primary);
@@ -33,7 +34,7 @@ p{
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 2.5%;
-    box-shadow: 3px 2px 2px 1px #1514141c;
+    /* box-shadow: 3px 2px 2px 1px #1514141c; */
     background-color: white;
     overflow: hidden;
     float: right;
