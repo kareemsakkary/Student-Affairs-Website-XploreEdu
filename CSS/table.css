@@ -1,27 +1,38 @@
 :root {
-    --primary: #1e90ff;
-    --secondry: #5eae9e;
-    --backgroud: #fff;
-  }
+  --primary: #560D0D;
+  --darkprimary:#2b0606;
+  --secondry: #EEE7E7;
+  --backgroud: #fff;
+}
   body{
     background-color: var(--backgroud);
+    background-image: none;
   }
   /*input css*/
   .btn{
-    background-color: var(--secondry);
+    background-color: var(--primary);
     color : white;
     transition: all ease 0.5s;
   }
   
   .btn:hover{
     background-color: var(--backgroud);
-    color : var(--secondry);
-    border: 1px solid var(--secondry);
+    color : var(--primary);
+    border: 1px solid var(--primary);
   }
   .search{
     padding: 5px;
   }
-  
+  .select:active{
+    outline: var(--primary);
+  }
+
+  input[type='radio'] {
+    accent-color: var(--primary);
+}
+.heading{
+  color:var(--primary)
+}
 .form-control:focus {
     color: #212529;
     background-color: #fff;

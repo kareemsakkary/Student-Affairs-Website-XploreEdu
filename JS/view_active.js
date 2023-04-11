@@ -33,7 +33,7 @@ function set_all_data(){
 }
 const tbdoy = document.getElementById('main_tbody')
 const row_template = (name,id,gpa,email,phone) => `
-<td><input type="radio" name = 'id' value="${id}"></td>
+<td><input type="radio" name = 'id' value="${id}" class = 'select'></td>
 <td>${id}</td>
 <td>${name}</td>
 <td>${gpa}</td>
