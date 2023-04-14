@@ -32,3 +32,52 @@ function validate(evt) {
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
   } 
+
+var keys = ['studentName' , 'Bdate' , 'gender' , 'phone', 'email' , 'GPA' , 'level' , 'deparment' , 'status'];
+function getID(sz){
+    var str = new Date().getFullYear().toString() ;
+    sz=parseInt(sz);
+    sz+=1;
+    var cnt = sz.toString();
+    for(var i = 0 ; i < 4-cnt.length ; i++){
+        str+=0;
+    }
+    str+=cnt;
+    return str;
+}
+
+
+var subm = function(){
+    var $myForm = document.getElementsByTagName('form');
+    if(! $myForm[0].checkValidity()){
+        document.getElementById("sub").click();
+        console.log(getData(),size());
+    }else{
+        var student={};
+        var li = document.getElementsByTagName("input");
+        for(var i of li){
+            var name = i.getAttribute("id");
+            var val = i.value;
+            // console.log(name);
+            if(keys.includes(name)){
+                if(name == 'GPA') val = parseInt(val);
+                student[name] = val
+            }
+        }
+        var li = document.getElementsByTagName("select");
+        for(var i of li){
+            var name = i.getAttribute("id");
+            var val = i.value;
+            // console.log(name);
+            if(keys.includes(name)){
+                student[name] = val
+            }
+        }
+        student['statues'] = 'active';
+        student['gender'] = document.querySelector('input[name="gender"]:checked').value;
+        var id = getID(size());
+        setStudent(id,student);
+        location.reload();
+    }
+
+}

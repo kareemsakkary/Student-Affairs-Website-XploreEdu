@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="CSS/navbar.css">
   <link rel="stylesheet" href="CSS/forms.css">
   <link rel="stylesheet" href="CSS/style.css">
- 
+  <script src="JS/forms.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +32,7 @@
     </nav>
   </header>
 
-  <form action="" method="post">
+  <form id= "form" action="/#" method="">
     <div class="horz">
       <div style="width: 15%;">
         <img id="pic" src="img/default pp.png" alt="" width="150" />
@@ -44,20 +45,20 @@
           <div class="infotype">Personal Info</div>
           <div class="info">
             <div class="form__group field formIn">
-              <input type="text" autocomplete="off" name="studentName" class="form__field" placeholder="name"
+              <input type="text" autocomplete="off" id="studentName" name="studentName" class="form__field" placeholder="name"
                 required />
               <label for="studentName" class="form__label">Student Name</label>
             </div>
             <br>
             <div class="horz" style="width: 100%; margin-left: 0%;">
               <div class="form__group field formIn" style="width: 60%;">
-                <input type="date" min="1950-01-01" max="2010-01-01" autocomplete="off" name="studentBirthdate"
+                <input type="date" min="1950-01-01" max="2010-01-01" autocomplete="off" id="Bdate" name="Bdate"
                   class="form__field" placeholder="studentBirthdate" required />
                 <label for="studentBirthdate" class="form__label">Birth Date</label>
               </div>
               <div class="wrapper" style="width:40%;">
-                <input type="radio" name="stGender" id="option-1" value="male" checked>
-                <input type="radio" name="stGender" id="option-2" value="female">
+                <input type="radio" name="gender" id="option-1" value="male" checked>
+                <input type="radio" name="gender" id="option-2" value="female">
                 <label for="option-1" class="option option-1">
                   <div class="dot"></div>
                   <span>Male</span>
@@ -75,13 +76,13 @@
           <div class="infotype">Contact Info</div>
           <div class="info">
             <div class="form__group field formIn">
-              <input type="email" autocomplete="off" name="studentEmail" class="form__field" placeholder="email"
+              <input type="email" autocomplete="off"id ="email" name="studentEmail" class="form__field" placeholder="email"
                 required />
               <label for="studentEmail" class="form__label">Student Email</label>
             </div>
             <br>
             <div class="form__group field formIn">
-              <input type="tel" autocomplete="off" minlength="11" maxlength="11" onkeypress='validate(event)' name="StudentPhone" class="form__field" placeholder="Phone"
+              <input type="tel" autocomplete="off" minlength="11" id="phone" maxlength="11" onkeypress='validate(event)' name="StudentPhone" class="form__field" placeholder="Phone"
                 required />
               <label for="StudentPhone" class="form__label">Student Phone</label>
             </div>
@@ -93,12 +94,12 @@
           <div class="info">
             <div class="horz" style="margin-left: 0%;">
               <div class="form__group field formIn" style="width: 20%;">
-                <input type="text" autocomplete="off" name="studentGPA" class="form__field" placeholder="GPA"
+                <input type="text" onkeypress='validate(event)' autocomplete="off" id="GPA" name="studentGPA" class="form__field" placeholder="GPA"
                   required />
                 <label for="studentGPA" class="form__label">GPA</label>
               </div>
               <label class="select" for="slct">
-                <select id="slct" name="level" required="required">
+                <select id="level" name="level" required="required">
                   <option value="" disabled="disabled" selected="selected">Level</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -110,14 +111,14 @@
                 </svg>
               </label>
               <label class="select" for="slct">
-                <select id="slct" name="Department" required="required">
+                <select id="deparment" name="Department" required="required">
                   <option value="" disabled="disabled" selected="selected"><label for="deps">Department</option>
                   <option value="null"> N/A </option>
-                  <option value="ComScience">Computer Science</option>
-                  <option value="AI">Artificial Intelligence</option>
-                  <option value="InfoTech"> Information Technology</option>
-                  <option value="cybersec"> Cyber Security</option>
-                  <option value="DataSci"> Data Science</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Artificial Intelligence">Artificial Intelligence</option>
+                  <option value="Information Technology"> Information Technology</option>
+                  <option value="Cyber Security"> Cyber Security</option>
+                  <option value="Data Science"> Data Science</option>
                 </select>
                 <svg>
                   <use xlink:href="#select-arrow-down"></use>
@@ -134,13 +135,12 @@
         </div> 
       </div>
     </div>
-    <input type="submit" class="btn_form" style="width: 20%; margin-left: 40%;" id="subm">
-
+    <button type="button" onclick="subm()" class="btn_form" style="width: 20%; margin-left: 40%;" >Submit </button>
+    <input type="submit" id="sub" class="hidden">
   </form>
   <footer>
     <p>Copyright &copy; 2023 The President and Fellows of the College</p>
   </footer>
-  <script src="JS/forms.js"></script>
   <script src="JS/main.js"></script>
   <script src="JS/home.js"></script>
 </body>
