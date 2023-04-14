@@ -4,6 +4,7 @@ body{
 }
 hr{
   border-top: 1px solid var(--secondry);
+  margin-bottom: 7.5px;
 }
 
 
@@ -51,7 +52,6 @@ hr{
   height: 50%;
   margin-left: 1%;
   margin-top: 10px;
-  /* box-shadow: 3px 2px 2px 1px #1514141c; */
   background-color: var(--backgroud);
   overflow: hidden;
   float: right;
@@ -69,7 +69,8 @@ hr{
 }
 .info label{
   text-align: center;
-  color: grey;
+  color: black;
+  font-weight: bold;
 }
 
 
@@ -107,4 +108,15 @@ hr{
 .footr{
   float: right; 
   margin: 0 35%;
+}
+
+@media(max-width: 1063px){
+  .rwd{
+    display: flex;
+    flex-direction: column;
+  }
+  .card{
+    width: 100%;
+
+  }
 }

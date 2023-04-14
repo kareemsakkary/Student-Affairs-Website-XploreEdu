@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="img/icon.png">
     <link rel="stylesheet" href="CSS/navbar.css" />
     <link rel="stylesheet" href="CSS/depart.css" />
+    <script src="JS/main.js"></script>
   </head>
 
   <body>
@@ -36,7 +37,7 @@
             <div>
               <b>ID</b>
               <p>
-                <label id="studid" for="id"> ID </label> <!-- ID -->
+                <label id="studid" for="id">  </label> <!-- ID -->
                 <input type="hidden" name="id" id="submit_id" />
               </p>
               <hr />
@@ -44,14 +45,14 @@
             <div>
               <b>Name</b>
               <p>
-                <label id="studname" for="studname"> Name </label> <!--name-->
+                <label id="studname" for="studname">  </label> <!--name-->
               </p>
               <hr />
             </div>
             <div>
               <label for="deps"> <b>Department</b> </label>
               <select class="form-control" id="deps" required>
-                <option value="null">N/A</option>
+                <option value="N/A">N/A</option>
                 <option value="Computer Science">Computer Science</option>
                 <option value="Artificial Intelligence">Artificial Intelligence</option>
                 <option value="Information Technology">Information Technology</option>
@@ -66,7 +67,7 @@
         <button
           class="btn"
           type="submit"
-          onclick="update()"
+          onclick="verify_level()"
           formaction="profile.html"
         >
           Update
