@@ -73,7 +73,7 @@ var subm = function(){
                 student[name] = val
             }
         }
-        student['statues'] = 'Active';
+        student['statues'] = 'active';
         student['gender'] = document.querySelector('input[name="gender"]:checked').value;
         var id = getID(size());
         setStudent(id,student);
