@@ -27,5 +27,4 @@ function size(){
 function format(){
     localStorage.removeItem("data");
     localStorage.removeItem("count");
-
 }
