@@ -16,6 +16,9 @@
   font-size: 2.2vw;
   color:white;
 }
+.student_row{
+  cursor: pointer;
+}
 #main_table{
   border-collapse: separate;
   border-spacing: 0;
