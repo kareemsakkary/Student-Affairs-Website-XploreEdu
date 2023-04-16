@@ -37,12 +37,15 @@ const row_template = (name, id, gpa, email, phone,level,state = false,) => {
 function check_departmen_able(e){
 
     const department_button = document.querySelector('#department_submit')
+    department_button.title = ''
+
     department_button.disabled = false
     const id_input = document.querySelector('input[name="id"]:checked');
     const data = getData()
     const student = data[id_input.value]
     if(student['level'] < 3){
         department_button.disabled = true
+        department_button.title = 'Student Must Be level three or higher'
     }
 }
 function set_onclick_disable_department(){
