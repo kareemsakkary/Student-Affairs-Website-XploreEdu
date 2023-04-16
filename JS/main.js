@@ -1,4 +1,4 @@
-// studentName , Bdate , gender , phone , email , GPA , level , department , status("active","inactive")
+// studentName , Bdate , gender , phone , email , GPA , level , department , status("Active","Inactive")
 
 function getData(){
     var x  =   JSON.parse(localStorage.getItem("data"));

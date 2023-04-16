@@ -39,8 +39,8 @@ function alter_state(state){
     id_input.checked = true
 }
 activate_button.addEventListener('click',()=>{
-    alter_state('active')
+    alter_state('Active')
 })
 deactivate_button.addEventListener('click',()=>{
-    alter_state('inactive')
+    alter_state('Inactive')
 })

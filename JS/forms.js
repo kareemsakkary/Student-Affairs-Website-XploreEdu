@@ -32,24 +32,7 @@ function validate(evt) {
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
 } 
-function validateGPA(evt) {
-    var theEvent = evt || window.event;
-  
-    // Handle paste
-    if (theEvent.type === 'paste') {
-        key = event.clipboardData.getData('text/plain');
-    } else {
-    // Handle key press
-        var key = theEvent.keyCode || theEvent.which;
-        key = String.fromCharCode(key);
-    }
-    var regex = /[0-9]|\./;
-    if( !regex.test(key) ) {
-      theEvent.returnValue = false;
-      if(theEvent.preventDefault) theEvent.preventDefault();
-    }
 
-} 
 var keys = ['studentName' , 'Bdate' , 'gender' , 'phone', 'email' , 'GPA' , 'level' , 'department' , 'status'];
 function getID(sz){
     var str = new Date().getFullYear().toString() ;
@@ -91,8 +74,7 @@ var subm = function(){
                 student[name] = val
             }
         }
-
-        student['status'] = 'active';
+        student['status'] = 'Active';
         student['gender'] = document.querySelector('input[name="gender"]:checked').value;
         var id = getID(size());
         setStudent(id,student);
@@ -109,3 +91,9 @@ var level_change = function(sel){
         dep.disabled =  false;
     }
 }
+function max_min_val(x){
+    var val = parseInt(x.value)
+    if (val>4) {
+        $(x).val("4")
+    }
+} 

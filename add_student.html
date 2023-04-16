@@ -94,7 +94,7 @@
           <div class="info">
             <div class="horz" style="margin-left: 0%;">
               <div class="form__group field formIn" style="width: 20%;">
-                <input type="text" onchange='' onkeypress='validate(event);' autocomplete="off" id="GPA" name="studentGPA" class="form__field" placeholder="GPA"
+                <input type="text" onchange='' onkeyup="min_max_val(this);" onkeypress='validate(event);' autocomplete="off" id="GPA" name="studentGPA" class="form__field" placeholder="GPA"
                   required />
                 <label for="studentGPA" class="form__label">GPA</label>
               </div>
