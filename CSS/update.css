@@ -21,27 +21,194 @@ padding: auto;    }
     margin: 0;
     box-sizing: border-box;
 }
-body:not(.container){
-    background-color: #f6f0f0;
-    /* font-family: 'Poppins', sans-serif; */
-
-   
-}
 
 h1{
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 600px;
-    color: #560D0D;
+    background-color: #560D0D;
+    color: #fff;
     text-align: center;
     margin-bottom: 1rem;
 }
-p{
-    position: relative;
-    top: 0px;
-    left: 0px;
-    /* display: flex; */
-    font-size: 22px;
+
+
+.readOnly{
+    background-color: #ccc;
+    color: rgb(106, 102, 102);
 }
+
+.horz {
+    display: inline-flex;
+    width: 98%;
+    margin: 1%;
+}
+
+.horz div {
+    margin-left: 2%;
+}
+
+div img {
+
+    border-radius: 50%;
+    width: 200px;
+}
+
+.btn_form {
+    border: 0;
+    text-align: center;
+    display: block;
+    padding: 14px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    color: #ffffff;
+    background-color: var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow 200ms ease-out;
+    cursor: pointer;
+}
+
+.btn_form:hover {
+    background-color: var(--backgroud);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.file-upload-input {
+    display: none;
+
+}
+
+
+.personalinfo,
+.studinfo,
+.continfo {
+    width: 74%;
+    height: 50%;
+    margin-left: 1%;
+    margin-top: 10px;
+    box-shadow: 3px 2px 2px 1px #1514141c;
+    background-color: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    float: right;
+}
+
+.info {
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info span {
+    text-align: center;
+    color: grey;
+}
+
+
+.infotype {
+    margin-top: 1;
+    font-weight: bold;
+    font-size: 26px;
+    color: var(--primary);
+}
+
+.section {
+    margin-bottom: 2%;
+    background-color: var(--backgroud);
+    border-radius: 5px;
+    padding: 2%;
+    /* background-color: #5a667f; */
+
+}
+.section:last-child{
+    margin-bottom: 1%;
+
+}
+
+/* radio btn */
+.wrapper {
+    margin-top: 15px;
+    margin-right: 0px;
+    display: inline-flex;
+    background: #fff;
+    height: 60px;
+    width: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.wrapper .option {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 2px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.wrapper .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.wrapper .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+.wrapper input[type="radio"] {
+    display: none;
+}
+
+.wrapper input[type="checkbox"] {
+    display: none;
+}
+
+.wrapper #option-1:checked:checked~.option-1,
+.wrapper #option-2:checked:checked~.option-2 {
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.wrapper #option-1:checked:checked~.option-1 .dot,
+.wrapper #option-2:checked:checked~.option-2 .dot {
+    background: #fff;
+}
+
+.wrapper #option-1:checked:checked~.option-1 .dot::before,
+.wrapper #option-2:checked:checked~.option-2 .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wrapper #option-1:checked:checked~.option-1 span,
+.wrapper #option-2:checked:checked~.option-2 span {
+    color: #fff;
+}
+
 label{
     position: relative;
     top: 0px;
@@ -55,19 +222,8 @@ input, select {
     padding: 5px 5px 8px 0px;
     width: 100%;
     font-size: 18px;
-    border-radius: 5px;
-    background-color:  #f6f0f0;
-      border: solid 1px #ccc;
-}
-.container{
+    border-bottom: 2px solid #9b9b9b;
 
-    border-radius: 25px;
-    box-shadow: 0 25.6px 57.6px 0 rgb(0 0 0 / 22%), 0 4.8px 14.4px 0 rgb(0 0 0 / 18%);
-    width: 1500px;
-    margin: 30px auto;
-    background-color:  #f6f0f0;
-    border: solid 3px #ccc;
-    padding: 20px 10px;
 }
 
 .field{
@@ -79,89 +235,39 @@ input, select {
     box-sizing: border-box;
 }
   .field input{
+    background: transparent;
+   transition: border-color 0.2s;
+    border-bottom: 2px solid #9b9b9b;
     outline: none;
-    border: none;
-    border-bottom: 3px solid #ccc;
   }
-  .field label {
-    margin-left: .5rem;
-
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    cursor: text;
-    align-items: center;
-    transition: all 0.2s ease;
-    font-size: 22px;
-  }
-input:focus + label ,
-input:valid + label {
-    top: -20px;
-    color:#560D0D;
+ label{
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 5px;
     font-size: 18px;
-}
-#male, #female{
-    display: inline-block;
-    width: auto;
-    margin: 0 0.5rem;
-}
-input[type='radio']{
-    accent-color: #560D0D;
-}
-
-#delete{
-    padding: .5rem;
-    border-radius: 5px;
-    font-size: 22px;
-    width: 50px;
-    display: inline-block;
-    background-color: rgb(185, 33, 33);
-    width: auto;
-}
-#submit{
-    padding: .5rem;
-    border-radius: 5px;
-    font-size: 22px;
-    width: 50px;
-    display: inline-block;
-    background-color: rgb(80, 187, 123);
-    width: auto;
-    
-}
-#delete:hover{
-    background-color: rgb(119, 23, 23);
-    transition: 0.5s;
-}
-#submit:hover{
-    background-color: rgb(50, 109, 50);
-    transition: 0.5s;
+    color: #8e8d8d;
+    transition: all 0.2s;
+    pointer-events: none;
+} 
+.btn{
+    display: inline-block;;
+    position: relative;
+    width: 250px;
+    padding: 14px;
+    margin: 50px;
+    align-items: center;
+    color: #ffffff;
+    background-color: var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow 200ms ease-out;
+    cursor: pointer;
 }
 
-
-.image {
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    ;
-}
-.image img{
-    max-width: 400px;
-    height: 100%;
-    border-radius: 50%;
-    border: solid 1px #ccc;
-    padding: 10px 10px 10px 10px;
-}
-
-.image input{
-    border: none;
-}
-.image div{
-    margin-top: 80px;
-    margin-left: 40px;
-}
-.readOnly{
-    background-color: #ccc;
-    color: rgb(106, 102, 102);
+.btn:hover {
+    background-color: var(--backgroud);
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }

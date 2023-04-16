@@ -8,9 +8,10 @@
     <link rel="icon" type="image/x-icon" href="img/icon.png">
     <link rel="stylesheet" href="CSS/update.css">
     <link rel="stylesheet" href="CSS/navbar.css">
-    <script src="JS/update.js"></script>
-
+    <script src="JS/main.js"></script>
 </head>
+
+
 <body>
   <header>
     <a href="index.html" class="logo"> <img height="100" width="300" src="img/logo.png" alt="Website Logo" /></a>
@@ -21,39 +22,38 @@
     </div>
     <nav class="nav-bar">
       <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/add_student.html">Add Students</a></li>
-        <li><a href="/view_active.html">View Active Students</a></li>
-        <li><a href="/view_all.html">View All Students</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="add_student.html">Add Students</a></li>
+        <li><a href="view_active.html">View Active Students</a></li>
+        <li><a href="view_all.html">View All Students</a></li>
       </ul>
     </nav>
   </header>
-  <form method="post" onsubmit="return validateForm()">
+  <h1>Update student data</h1>
   <br>
-    <section class="container">
-      <h1>Update student data</h1>
-     <hr>
-     <br>
-     <br>
-<h2> Personal Info. </h2>
-<br><br>
-<div class="image">
-    <img src="img/default pp.png" >
-    <div >
-    <label for="profile_image"> Change profile image </label>
-    <input type="file"  id="profile_image" name="image" />
-    </div>
+  <form method="post" onsubmit="return validateForm()" action="view_all.html">
+    <div class="horz">
+<div style="width: 15%;">
+  <img id="pic" src="img/default pp.png" alt=""="15%" />
+  <br>
+  <button class="btn_form" type="button" onclick="clickOn('profilePic');">Add Image</button>
+  <input id="profilePic" class="file-upload-input" type='file' onchange="readURL(this,'pic');" accept="image/*" />
 </div>
 <br>
 <br>
-      <div class ="field" >
-        <input type="number" min="0" step="1" id="StudentID"  />
-        <label for="StudentID" > ID </label>
-      </div>
+<div style="width: 70%;">
+<div class="section">
+  <div class="infotype">Personal Info</div>
+  <div class="info">
+    <br>
+    <div class ="field" >
+      <label for="StudentID" > ID </label>
+      <input type="number" min="0" step="1" id="StudentID"  />
+    </div>
       <br />
       <div class ="field">
-        <input type="text"  id="StudentName" required />
         <label for="StudentName"> Name </label>
+        <input type="text"  id="StudentName" required />
       </div>
       <br />
       <div>
@@ -61,30 +61,34 @@
         <input type="date"  id="StudentBDate" required/>
       </div>
       <br>
-      <div >
-        <p >Gender</p>
-         <label for="male" id="malelabel" >
-          <input type="radio" id="male" name="gender" value="male">
-          Male
-        </label><br>
-         <label for="female" id="femalelabel" >
-          <input type="radio" id="female" name="gender" value="female">
-          Female
-        </label><br>
-      </div>
-      <br />
+     <div class="wrapper" style="width:40%;">
+                <input type="radio" name="gender" id="option-1" value="Male" >
+                <input type="radio" name="gender" id="option-2" value="Female">
+                <label for="option-1" class="option option-1">
+                  <div class="dot"></div>
+                  <span>Male</span>
+                </label>
+                <label for="option-2" class="option option-2">
+                  <div class="dot"></div>
+                  <span>Female</span>
+                </label>
+              </div>
+            </div>
+          </div>
+      <br >
       <br>
-<h2> Educational Info. </h2>
-<br><br>
+      <div class="section">
+        <div class="infotype">Educational Info. </div>
+        <div class="info">
+<br>
       <div class ="field">
-        <input type="number" min="0"max="4" step="0.01"  id="StudentGPA" required/>
-        <label for="StudentGPA"> GPA </label>
+        <label class="form__label"  for="StudentGPA"> GPA </label>
+        <input type="number" class="form__field" min="0"max="4" step="0.01"  id="StudentGPA" required/>
       </div>
       <br >
       <div >
-        <label for="level" > Level </label>
+        <label class="select" for="level" > Level </label>
         <select name="Level" id="level" required>
-          <option value="">--Please choose an option--</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -95,9 +99,8 @@
       <br>
       <div >
 
-        <label for="status"> Status </label>
+        <label class="select"for="status"> Status </label>
         <select name="Status" class="inp" id="status" required>
-          <option value="">--Please choose an option--</option>
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
         </select>
@@ -107,31 +110,37 @@
         <label for="deps"> Department </label>
         <input type="text" class="readOnly" value="Computer Science" readonly id="deps" />
       </div>
+    </div>
+    </div>
       <br><br>
-      <h2> Contact Info. </h2>
-<br><br>
+      <div class="section">
+      <div class="infotype">Contact Info</div>
+      <div class="info">
+      <br>
       <div class ="field">
-        <input type="tel" class="inp"  id="StudentNumber" required/>
-        <label for="StudentNumber"> Phone Number </label>
+        <label   for="StudentNumber"> Phone Number </label>
+        <input type="tel" class="form__field" minlength="11" maxlength="11" onkeypress='validate(event)'  id="StudentNumber" required/>
       </div>
       <br />
       <div class ="field">
-        <input type="email" class="inp" id="StudentEmail" required />
-        <label for="StudentEmail"> Email </label>
+        <label  for="StudentEmail"> Email </label>
+        <input type="email"  id="StudentEmail" required />
       </div>
-    
+    </div>
+  </div>
+  
       <br />
       <div>
-        <input type="submit" name="submit" value="Submit" placeholder="Submit" id="submit">
-        <input type="submit" name="delete" value="Delete student" placeholder="Delete student" id="delete">
+        <input type="submit" class="btn" onclick="update()" name="update" value="Update " placeholder="Update" id="update">
+        <input type="submit" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete" id="delete">
 
       </div>
-    </section>
   </form>
   <footer>
     <p>Copyright &copy; 2023 The President and Fellows of the College </p> 
   </footer>
   <script src="JS/home.js"></script>
+  <script src="JS/update.js"></script>
 
 </body>
 </html>
