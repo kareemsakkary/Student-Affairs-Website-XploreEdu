@@ -31,8 +31,25 @@ function validate(evt) {
       theEvent.returnValue = false;
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
-  } 
+} 
+function validateGPA(evt) {
+    var theEvent = evt || window.event;
+  
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+    // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9]|\./;
+    if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
 
+} 
 var keys = ['studentName' , 'Bdate' , 'gender' , 'phone', 'email' , 'GPA' , 'level' , 'deparment' , 'status'];
 function getID(sz){
     var str = new Date().getFullYear().toString() ;
@@ -64,6 +81,7 @@ var subm = function(){
                 student[name] = val
             }
         }
+
         var li = document.getElementsByTagName("select");
         for(var i of li){
             var name = i.getAttribute("id");
@@ -73,11 +91,21 @@ var subm = function(){
                 student[name] = val
             }
         }
+
         student['statues'] = 'active';
         student['gender'] = document.querySelector('input[name="gender"]:checked').value;
         var id = getID(size());
         setStudent(id,student);
-        location.reload();
+        location.replace("view_all.html");
     }
-
+}
+var level_change = function(sel){
+    var dep = document.getElementById("deparment");
+    if(sel.value ==='1' || sel.value==='2'){
+        dep.value = "general";
+        dep.disabled =  true;
+    }else{
+        dep.value = "";
+        dep.disabled =  false;
+    }
 }

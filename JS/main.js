@@ -11,13 +11,14 @@ function getData(){
 
 function setStudent(id,student){   
     var data = getData();
-    data[id] = student;
-    localStorage.setItem("data",JSON.stringify(data));
     var x = Number(size())+1;
     if(x == NaN) x = 1;
     console.log(x);
-    localStorage.setItem("count",(x).toString());
-    
+    if(data[id] == null || data[id]=="")
+        localStorage.setItem("count",(x).toString());
+    data[id] = student;
+    localStorage.setItem("data",JSON.stringify(data));
+
 }
 function size(){
     var x = localStorage.getItem("count");

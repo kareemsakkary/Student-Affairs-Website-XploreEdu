@@ -8,7 +8,9 @@ hr{
 }
 p{
     text-align: center;
-    color: grey;
+    color: Black;
+    font-weight: bold;
+    font-size: 20px;
     width: 98%;
 }
 #header{
@@ -34,7 +36,6 @@ p{
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 2.5%;
-    /* box-shadow: 3px 2px 2px 1px #1514141c; */
     background-color: white;
     overflow: hidden;
     float: right;
@@ -64,7 +65,8 @@ p{
     width: 100%;
     margin-bottom: 0px;
     text-align: center;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 
@@ -92,6 +94,7 @@ p{
     margin-right:  45.75%;
     margin-bottom: 10%; 
     overflow: hidden;
+    cursor: pointer;
 }
 
 

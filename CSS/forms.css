@@ -5,17 +5,28 @@ body {
 .horz {
     display: inline-flex;
     width: 98%;
-    margin: 1%;
+    margin-top: 1%;
 }
-
+.horz1 {
+    display: inline-flex;
+    width: 98%;
+    margin-top: 1%;
+}
 .horz div {
-    margin-left: 2%;
+
 }
 
+#img_cont{
+    width: 15%;
+    /* height: 15px; */
+}
+#in_cont{
+    width: 70%;
+}
 div img {
     align-self: center;
     border-radius: 50%;
-    width: 200px;
+    width: 100%;
 }
 .hidden{
     display: none;
@@ -26,7 +37,7 @@ div img {
     display: block;
     padding: 14px;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 5%;
     color: #ffffff;
@@ -94,6 +105,10 @@ div img {
 
 }
 
+#bdate{
+    width: 60%;
+}
+
 /* radio btn */
 .wrapper {
     margin-top: 15px;
@@ -101,7 +116,7 @@ div img {
     display: inline-flex;
     background: #fff;
     height: 60px;
-    width: 300px;
+    width: 40%;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 5px;
@@ -111,7 +126,7 @@ div img {
 .wrapper .option {
     background: #fff;
     height: 100%;
-    width: 100%;
+    width: 48%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -222,7 +237,9 @@ div img {
 .select select option[value=""][disabled] {
     display: none;
 }
-
+.select select option[value="general"][disabled] {
+    display: none;
+}
 .select select:focus {
     outline: none;
     border-color: var(--darkprimary);
@@ -243,7 +260,27 @@ div img {
 @media(max-width: 800px){
     .horz{
         display: block;
-        text-align: center;
+        /* text-align: center; */
+    }
+    #img_cont{
+        display: inline-block;
+        width:20%;
+        margin-left: 6%;
+    }
+    .horz div{
+        /* display: block; */
+        /* text-align: center; */
+        width: 98%;
+    }
+    #in_cont{
+        width: 98%;
+    }
+    #bdate{
+        width: 60%;
+    }
+    .wrapper{
+        width: 30%;
+        margin-left: 0%;
     }
     /* .select{
     margin-top: 5%;

@@ -5,9 +5,8 @@
     <title>Profile</title>
     <link rel="stylesheet" href="CSS/navbar.css" />
     <link rel="stylesheet" href="CSS/profile.css" />
-    
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
-
+    <link rel="icon" type="image/x-icon" href="img/icon.png" />
+    <script src="JS/main.js"></script>
   </head>
   <body>
     <header>
@@ -30,66 +29,73 @@
     </header>
     <div class="container">
       <div id="header">Student Profile</div>
-      <div class="card">
-        <img src="img/default pp.png" alt="" width="150" />
-        <div class="lower">
-          <div>
-            <form method="get">
-              <input type="hidden" name="id" id="submit_id">
-              <button class="btn" type="submit" onclick="update()" formaction="update.html">
-                Update
-              </button>
-            </form>
+
+      <div class="rwd">
+        <div class="card">
+          <img src="img/default pp.png" alt="" width="150" />
+          <div class="lower">
+            <div>
+              <form method="get">
+                <input type="hidden" name="id" id="submit_id" />
+                <button
+                  class="btn"
+                  type="submit"
+                  onclick="update()"
+                  formaction="update.html"
+                >
+                  Update
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="personalinfo">
+          <div class="infotype">Personal Info</div>
+          <div class="info">
+            <b>Name</b>
+            <label id="studname"></label>
+            <hr />
+            <b>Date of Birth</b><label id="studbirth"> </label>
+            <hr />
+            <b>Gender</b><label id="studgender"> </label>
+            <hr />
+          </div>
+          <br />
+        </div>
+        <div class="continfo">
+          <div class="infotype">Contact Info</div>
+          <div class="info">
+            <b>Email</b><label id="studmail"> </label>
+            <hr />
+            <b>Mobile Number</b><label id="studphone"> </label>
+            <hr />
+            <br />
+          </div>
+        </div>
+        <div class="studinfo">
+          <div class="infotype">Student Info</div>
+          <div class="info">
+            <b>ID</b><label id="studid"> </label>
+            <hr />
+            <b>GPA</b><label id="gpa"> </label>
+            <hr />
+            <b>Level</b><label id="lvl"> </label>
+            <hr />
+            <b>Department</b><label id="depart"> </label>
+            <hr />
+            <b>Status</b><label id="status"> </label>
+            <hr />
+            <br />
           </div>
         </div>
       </div>
-      <div class="personalinfo">
-        <div class="infotype">Personal Info</div>
-        <div class="info">
-          <b>Name</b>
-          <label for="studname">Student Name</label>
-          <hr />
-          <b>Date of Birth</b><label for="studbirth"> dd/mm/yy</label>
-          <hr />
-          <b>Gender</b><label for="studgender"> Female</label>
-          <hr />
-        </div>
-        <br />
-      </div>
-      <div class="continfo">
-        <div class="infotype">Contact Info</div>
-        <div class="info">
-          <b>Email</b><label for="studmail"> sample@email.com</label>
-          <hr />
-          <b>Mobile Number</b><label for="studphone"> 01212156484</label>
-          <hr />
-          <br />
-        </div>
-      </div>
-      <div class="studinfo">
-        <div class="infotype">Student Info</div>
-        <div class="info">
-          <b>ID</b><label for="studid"> 20220400</label>
-          <hr />
-          <b>GPA</b><label for="gpa"> 4</label>
-          <hr />
-          <b>Level</b><label for="lvl"> 3</label>
-          <hr />
-          <b>Department</b><label for="depart"> Computer Science</label>
-          <hr />
-          <b>Status</b><label for="status"> Active</label>
-          <hr />
-          <br />
-        </div>
-      </div>
     </div>
-    <div class="footr">
+    <div>
       <footer>
         <p>Copyright &copy; 2023 The President and Fellows of the College</p>
       </footer>
     </div>
     <script src="JS/profile.js"></script>
     <script src="JS/home.js"></script>
-
   </body>
 </html>

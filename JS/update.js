@@ -1,16 +1,81 @@
+var data = getData();
+
+// to get url parameters
+var urlParams = new URLSearchParams(window.location.search); 
+var student_id = urlParams.get("id");
+
+var student = data[student_id];
+
+window.onload = function(){
+    //checks if student exists
+    if (student == undefined)
+        return;
+    //display student info
+    console.log(student);
+    document.getElementById("StudentID").value = student_id;
+    document.getElementById("StudentName").value = student["studentName"];
+    document.getElementById("StudentBDate").value = student["Bdate"];
+    document.getElementById("StudentGPA").value = student["GPA"];
+    document.getElementById("StudentNumber").value = student["phone"];
+    document.getElementById("StudentEmail").value = student["email"];
+    document.getElementById("level").value = student["level"];
+    document.getElementById("deps").value = student["deparment"];
+    document.getElementById("status").value = student["statues"];
+      if(student['gender']=='Male'){
+        document.getElementById("option-1").checked= true;
+      }else if(student['gender']=='Female'){
+        document.getElementById("option-2").checked= true;
+    }
+    console.log(document.getElementById('option-1').checked);
+    console.log(document.getElementById('option-2').checked);
+
+}
+var clickOn = function(str){
+  document.getElementById(str).click();
+}
+function readURL(input , str) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+          document.getElementById(str).setAttribute('src', e.target.result);
+          // $('#img')
+          //     .attr('src', e.target.result)
+      };
+
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function validate(evt) {
+  var theEvent = evt || window.event;
+
+  // Handle paste
+  if (theEvent.type === 'paste') {
+      key = event.clipboardData.getData('text/plain');
+  } else {
+  // Handle key press
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode(key);
+  }
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+} 
 function validateForm() {
 // Get the form and form elements by their IDs
-const form = document.getElementById('update-form');
-const studentIdInput = document.getElementById('StudentID');
-const studentNameInput = document.getElementById('StudentName');
-const studentBDateInput = document.getElementById('StudentBDate');
-const studentGPAInput = document.getElementById('StudentGPA');
-const maleInput = document.getElementById('male');
-const femaleInput = document.getElementById('female');
-const levelInput = document.getElementById('level');
-const statusInput = document.getElementById('status');
-const studentPhoneInput = document.getElementById('StudentPhone');
-const studentEmailInput = document.getElementById('StudentEmail');
+var studentIdInput = document.getElementById('StudentID');
+var studentNameInput = document.getElementById('StudentName');
+var studentBDateInput = document.getElementById('StudentBDate');
+var studentGPAInput = document.getElementById('StudentGPA');
+var maleInput = document.getElementById('option-1').checked;
+var femaleInput = document.getElementById('option-2').checked;
+var levelInput = document.getElementById('level');
+var statusInput = document.getElementById('status');
+var studentPhoneInput = document.getElementById('StudentNumber');
+var studentEmailInput = document.getElementById('StudentEmail');
   if (studentIdInput.value === '' || isNaN(studentIdInput.value) || studentIdInput.value < 0 || studentIdInput.value % 1 != 0) {
     alert('Please enter a valid ID.');
     studentIdInput.focus();
@@ -35,7 +100,7 @@ const studentEmailInput = document.getElementById('StudentEmail');
     return;
   }
   
-  if (!maleInput.checked && !femaleInput.checked) {
+  if (!maleInput && !femaleInput) {
     alert('Please select a gender.');
     return;
   }
@@ -60,3 +125,42 @@ const studentEmailInput = document.getElementById('StudentEmail');
    
   return true;
 };
+function update(){
+
+  if(student_id!=document.getElementById("StudentID").value){
+    data[document.getElementById("StudentID").value]=data[student_id];
+    delete data[student_id];
+    student_id=document.getElementById("StudentID").value;
+
+    }
+  student['studentName'] = document.getElementById("StudentName").value;
+  student['Bdate'] = document.getElementById("StudentBDate").value;
+  student['GPA'] = document.getElementById("StudentGPA").value;
+  student['phone'] = document.getElementById("StudentNumber").value;
+  student['email'] = document.getElementById("StudentEmail").value;
+  student['level'] = document.getElementById("level").value;
+  student['statues'] = document.getElementById("status").value;
+  student['deparment'] = document.getElementById("deps").value;
+  if(document.getElementById('option-1').checked){
+    student['gender']="Male";
+  }else if(document.getElementById('option-2').checked){
+    student['gender']="Female";
+
+  }
+
+  alert("Student Updated Successfully");
+
+  //update the local storage
+  data[student_id] = student;
+  localStorage.setItem("data",JSON.stringify(data));
+  //makes the current id a url parameter
+  document.getElementById("StudentID").value = student_id;
+
+}
+function deleteStudent(){
+  delete data[student_id];
+
+  // Update the localStorage
+  localStorage.setItem("data", JSON.stringify(data));
+  alert("Student deleted successfully.");
+}
