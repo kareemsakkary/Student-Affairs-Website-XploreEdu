@@ -60,7 +60,6 @@ var subm = function(){
             var val = i.value;
             // console.log(name);
             if(keys.includes(name)){
-                if(name == 'GPA') val = parseInt(val);
                 student[name] = val
             }
         }
@@ -84,7 +83,7 @@ var subm = function(){
 var level_change = function(sel){
     var dep = document.getElementById("department");
     if(sel.value ==='1' || sel.value==='2'){
-        dep.value = "general";
+        dep.value = "General";
         dep.disabled =  true;
     }else{
         dep.value = "";
