@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,7 @@
   </header>
   <h1>Update student data</h1>
   <br>
-  <form method="" onsubmit="return validateForm()" action="view_all.html">
+  <form method="" id="form" onsubmit="return validateForm()" action="view_all.html">
     <div class="horz">
       <div style="width: 15%;">
         <img id="pic" src="img/default pp.png" alt=""="15%" />
@@ -133,11 +133,11 @@
 
         <br />
         <div>
-          <input type="submit" class="btn" onclick="update()" name="update" value="Update " placeholder="Update"
+          <input type="button" class="btn" onclick="update()" name="update" value="Update " placeholder="Update"
             id="update">
-          <input type="submit" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete"
+          <input type="button" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete"
             id="delete">
-
+          <input type="submit" id="subm" class="hidden">
         </div>
   </form>
   <footer>

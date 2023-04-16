@@ -31,7 +31,9 @@ h1{
     margin-bottom: 1rem;
 }
 
-
+.hidden{
+    display: none;
+}
 .readOnly{
     background-color: #ccc;
     color: rgb(106, 102, 102);
