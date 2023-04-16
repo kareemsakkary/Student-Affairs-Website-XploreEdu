@@ -158,9 +158,9 @@ document.getElementById('update').addEventListener('click',()=>{
 
 })
 function deleteStudent(){
-  delete data[student_id];
-
-  // Update the localStorage
-  localStorage.setItem("data", JSON.stringify(data));
-  alert("Student deleted successfully.");
+  if (confirm("Are you sure you want to delete this student?")==true){
+    delete data[student_id];
+    localStorage.setItem("data",JSON.stringify(data));
+  }
+  
 }
