@@ -59,8 +59,13 @@ body{
     font-weight: 600;
     margin-right: 0.7vw;
 }
-  
-.btn:hover{
+.btn:disabled{
+  background-color: var(--backgroud);
+  color : var(--primary);
+  border: 1px solid var(--primary);
+  cursor: not-allowed;
+}
+.btn:hover:enabled{
     background-color: var(--backgroud);
     color : var(--primary);
     border: 1px solid var(--primary);
