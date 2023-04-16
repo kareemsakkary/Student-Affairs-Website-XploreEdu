@@ -25,7 +25,7 @@ function verify_level(){
     //checks if student level is 3 or higher to assign department
     if (student['level'] === "3"){
         student['deparment'] = document.getElementById("deps").value;
-        alert('Changes made successfuly!');
+        alert('Changes made successfully!');
     }
     // if not 3 or higher, the department returns to N/A
     else{
