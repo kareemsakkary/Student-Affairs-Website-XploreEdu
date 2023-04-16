@@ -237,7 +237,9 @@ div img {
 .select select option[value=""][disabled] {
     display: none;
 }
-
+.select select option[value="general"][disabled] {
+    display: none;
+}
 .select select:focus {
     outline: none;
     border-color: var(--darkprimary);
