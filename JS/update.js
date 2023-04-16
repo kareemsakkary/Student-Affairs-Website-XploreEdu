@@ -19,8 +19,8 @@ window.onload = function(){
     document.getElementById("StudentNumber").value = student["phone"];
     document.getElementById("StudentEmail").value = student["email"];
     document.getElementById("level").value = student["level"];
-    document.getElementById("deps").value = student["deparment"];
-    document.getElementById("status").value = student["statues"];
+    document.getElementById("deps").value = student["department"];
+    document.getElementById("status").value = student["status"];
       if(student['gender']=='Male'){
         document.getElementById("option-1").checked= true;
       }else if(student['gender']=='Female'){
@@ -139,8 +139,8 @@ function update(){
   student['phone'] = document.getElementById("StudentNumber").value;
   student['email'] = document.getElementById("StudentEmail").value;
   student['level'] = document.getElementById("level").value;
-  student['statues'] = document.getElementById("status").value;
-  student['deparment'] = document.getElementById("deps").value;
+  student['status'] = document.getElementById("status").value;
+  student['department'] = document.getElementById("deps").value;
   if(document.getElementById('option-1').checked){
     student['gender']="Male";
   }else if(document.getElementById('option-2').checked){

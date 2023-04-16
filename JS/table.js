@@ -8,12 +8,12 @@ function set_all_data() {
             'id' : student,
             'Bdate':student_data['Bdate'],
             'gpa':student_data['GPA'],
-            'deparment':student_data['deparment'],
+            'department':student_data['department'],
             'email':student_data['email'],
             'gender':student_data['gender'],
             'level':student_data['level'],
             'phone':student_data['phone'],
-            'statues':student_data['statues'],
+            'status':student_data['status'],
             'name':student_data['studentName']
         })
     }
@@ -45,7 +45,7 @@ function set_onclick_for_row(){
 function set_rows(rows,active_only = true) {
     tbdoy.innerHTML = ''
     for (student of rows) {
-        if(active_only && student['statues'] != 'active'){
+        if(active_only && student['status'] != 'active'){
             continue
         }
         const row = document.createElement('tr')
@@ -55,7 +55,7 @@ function set_rows(rows,active_only = true) {
         if(active_only){
             template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],)
         }else{
-            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['statues'])
+            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['status'])
         }
         row.innerHTML = template
         tbdoy.appendChild(row)

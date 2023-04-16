@@ -30,7 +30,7 @@ function alter_state(state){
     }
     const id = id_input.value
     const student_data = getData()[id]
-    student_data['statues'] = state
+    student_data['status'] = state
     setStudent(id,student_data)
     set_all_data()
     search_function()

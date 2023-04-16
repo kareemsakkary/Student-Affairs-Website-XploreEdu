@@ -50,7 +50,7 @@ function validateGPA(evt) {
     }
 
 } 
-var keys = ['studentName' , 'Bdate' , 'gender' , 'phone', 'email' , 'GPA' , 'level' , 'deparment' , 'status'];
+var keys = ['studentName' , 'Bdate' , 'gender' , 'phone', 'email' , 'GPA' , 'level' , 'department' , 'status'];
 function getID(sz){
     var str = new Date().getFullYear().toString() ;
     sz=parseInt(sz);
@@ -92,7 +92,7 @@ var subm = function(){
             }
         }
 
-        student['statues'] = 'active';
+        student['status'] = 'active';
         student['gender'] = document.querySelector('input[name="gender"]:checked').value;
         var id = getID(size());
         setStudent(id,student);
@@ -100,7 +100,7 @@ var subm = function(){
     }
 }
 var level_change = function(sel){
-    var dep = document.getElementById("deparment");
+    var dep = document.getElementById("department");
     if(sel.value ==='1' || sel.value==='2'){
         dep.value = "general";
         dep.disabled =  true;

@@ -25,8 +25,8 @@ window.onload = function(){
     document.getElementById("studid").innerText = student_id;
     document.getElementById("gpa").innerText = student['GPA'];
     document.getElementById("lvl").innerText = student['level'];
-    document.getElementById("depart").innerText = student['deparment'];
-    document.getElementById("status").innerText = student['statues'];
+    document.getElementById("depart").innerText = student['department'];
+    document.getElementById("status").innerText = student['status'];
     //makes the current id a url parameter
     document.getElementById("submit_id").value = student_id;
 }

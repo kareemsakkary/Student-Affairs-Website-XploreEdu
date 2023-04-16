@@ -13,7 +13,7 @@ window.onload = function(){
     //display student info
     document.getElementById("studname").innerText = student['studentName'];
     document.getElementById("studid").innerText = student_id;
-    document.getElementById("deps").value = student['deparment'];
+    document.getElementById("deps").value = student['department'];
 }
 
 function verify_level(){
@@ -24,7 +24,7 @@ function verify_level(){
     }
     //checks if student level is 3 or higher to assign department
     if (student['level'] === "3"){
-        student['deparment'] = document.getElementById("deps").value;
+        student['department'] = document.getElementById("deps").value;
         alert('Changes made successfully!');
     }
     // if not 3 or higher, the department returns to N/A
