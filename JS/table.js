@@ -19,12 +19,14 @@ function set_all_data() {
     }
 }
 const tbdoy = document.getElementById('main_tbody')
-const row_template = (name, id, gpa, email, phone,state = false,) => {
+const row_template = (name, id, gpa, email, phone,level,state = false,) => {
     let template = `
     <td><input type="radio" name = 'id' value="${id}" class = 'select' required></td>
     <td>${id}</td>
     <td>${name}</td>
     <td>${gpa}</td>
+    <td>${level}</td>
+
     <td>${email}</td>
     <td>${phone}</td>
     `
@@ -53,9 +55,13 @@ function set_rows(rows,active_only = true) {
         row.id = `${student['id']}`
         let template = ''
         if(active_only){
-            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],)
+            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['level'])
         }else{
+<<<<<<< HEAD
             template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['status'])
+=======
+            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['level'],student['statues'])
+>>>>>>> 0abf81a1bb6a8753bc9047cfa0341b5e38f650ae
         }
         row.innerHTML = template
         tbdoy.appendChild(row)
