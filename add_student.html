@@ -34,13 +34,13 @@
 
   <form id= "form" action="/#" method="">
     <div class="horz">
-      <div style="width: 15%;">
-        <img id="pic" src="img/default pp.png" alt=""="15%" />
+      <div id="img_cont">
+        <img id="pic" src="img/default pp.png" alt="" />
         <br>
         <button class="btn_form" type="button" onclick="clickOn('profilePic');">Add Image</button>
         <input id="profilePic" class="file-upload-input" type='file' onchange="readURL(this,'pic');" accept="image/*" />
       </div>
-      <div style="width: 70%;">
+      <div id="in_cont">
         <div class="section">
           <div class="infotype">Personal Info</div>
           <div class="info">
@@ -50,13 +50,13 @@
               <label for="studentName" class="form__label">Student Name</label>
             </div>
             <br>
-            <div class="horz" style="width: 100%; margin-left: 0%;">
-              <div class="form__group field formIn" style="width: 60%;">
+            <div class="horz1">
+              <div id="bdate" class="form__group field formIn">
                 <input type="date" min="1950-01-01" max="2010-01-01" autocomplete="off" id="Bdate" name="Bdate"
                   class="form__field" placeholder="studentBirthdate" required />
                 <label for="studentBirthdate" class="form__label">Birth Date</label>
               </div>
-              <div class="wrapper" style="width:40%;">
+              <div class="wrapper">
                 <input type="radio" name="gender" id="option-1" value="Male" checked>
                 <input type="radio" name="gender" id="option-2" value="Female">
                 <label for="option-1" class="option option-1">
