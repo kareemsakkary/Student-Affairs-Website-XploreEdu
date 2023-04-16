@@ -98,32 +98,36 @@
                   required />
                 <label for="studentGPA" class="form__label">GPA</label>
               </div>
-              <label class="select" for="slct">
-                <select id="level" name="level" onchange="level_change(this);"required="required">
-                  <option value="" disabled="disabled" selected="selected">Level</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <svg>
-                  <use xlink:href="#select-arrow-down"></use>
-                </svg>
-              </label>
-              <label class="select" for="slct">
-                <select id="department" name="Department" required="required" disabled>
-                  <option value="" disabled="disabled" selected="selected"><label for="deps">Department</option>
-                  <option value="General" disabled="disabled" > General </option>
-                  <option value="Computer Science">Computer Science</option>
-                  <option value="Artificial Intelligence">Artificial Intelligence</option>
-                  <option value="Information Technology"> Information Technology</option>
-                  <option value="Cyber Security"> Cyber Security</option>
-                  <option value="Data Science"> Data Science</option>
-                </select>
-                <svg>
-                  <use xlink:href="#select-arrow-down"></use>
-                </svg>
-              </label>
+              <div class="select_cont">
+                <label class="select" for="slct">
+                  <select id="level" name="level" onchange="level_change(this);"required="required">
+                    <option value="" disabled="disabled" selected="selected">Level</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                  <svg>
+                    <use xlink:href="#select-arrow-down"></use>
+                  </svg>
+                </label>
+              </div>
+              <div class="select_cont">
+                <label class="select" for="slct">
+                  <select id="department" name="Department" required="required" disabled>
+                    <option value="" disabled="disabled" selected="selected"><label for="deps">Department</option>
+                    <option value="General" disabled="disabled" > General </option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Information Technology"> Information Technology</option>
+                    <option value="Cyber Security"> Cyber Security</option>
+                    <option value="Data Science"> Data Science</option>
+                  </select>
+                  <svg>
+                    <use xlink:href="#select-arrow-down"></use>
+                  </svg>
+                </label>
+              </div>
               <!-- SVG Sprites-->
               <svg class="sprites">
                 <symbol id="select-arrow-down" viewbox="0 0 10 6">

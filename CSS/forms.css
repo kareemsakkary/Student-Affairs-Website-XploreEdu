@@ -191,6 +191,12 @@ div img {
 }
 
 /* select */
+.select_cont{
+    margin-left: 2%;
+    position: relative;
+    min-width: 200px;
+    padding-top: 4%;
+}
 .select {
     margin-left: 2%;
     position: relative;
@@ -282,8 +288,11 @@ div img {
         width: 30%;
         margin-left: 0%;
     }
-    /* .select{
-    margin-top: 5%;
-    margin-bottom: 5%; 
-    }  */
+    .select{
+        margin-left: 0%;
+    }
+    .select_cont{
+        margin-top: 4%;
+        margin-left: 0%;
+    } 
 }
