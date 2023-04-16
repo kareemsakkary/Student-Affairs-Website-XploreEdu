@@ -125,7 +125,7 @@ var studentEmailInput = document.getElementById('StudentEmail');
    
   return true;
 };
-function update(){
+document.getElementById('update').addEventListener('click',()=>{
 
   if(student_id!=document.getElementById("StudentID").value){
     data[document.getElementById("StudentID").value]=data[student_id];
@@ -156,7 +156,7 @@ function update(){
   //makes the current id a url parameter
   document.getElementById("StudentID").value = student_id;
 
-}
+})
 function deleteStudent(){
   delete data[student_id];
 
