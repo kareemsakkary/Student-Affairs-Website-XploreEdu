@@ -8,7 +8,7 @@ function set_all_data() {
             'id' : student,
             'Bdate':student_data['Bdate'],
             'gpa':student_data['GPA'],
-            'deparment':student_data['deparment'],
+            'department':student_data['department'],
             'email':student_data['email'],
             'gender':student_data['gender'],
             'level':student_data['level'],
@@ -19,12 +19,14 @@ function set_all_data() {
     }
 }
 const tbdoy = document.getElementById('main_tbody')
-const row_template = (name, id, gpa, email, phone,state = false,) => {
+const row_template = (name, id, gpa, email, phone,level,state = false,) => {
     let template = `
     <td><input type="radio" name = 'id' value="${id}" class = 'select' required></td>
     <td>${id}</td>
     <td>${name}</td>
     <td>${gpa}</td>
+    <td>${level}</td>
+
     <td>${email}</td>
     <td>${phone}</td>
     `
@@ -53,9 +55,9 @@ function set_rows(rows,active_only = true) {
         row.id = `${student['id']}`
         let template = ''
         if(active_only){
-            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],)
+            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['level'])
         }else{
-            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['statues'])
+            template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['level'],student['statues'])
         }
         row.innerHTML = template
         tbdoy.appendChild(row)
