@@ -23,14 +23,13 @@ function verify_level(){
         return;
     }
     //checks if student level is 3 or higher to assign department
-    if (student['level'] >= "3"){
+    if (student['level'] === "3"){
         student['deparment'] = document.getElementById("deps").value;
         alert('Changes made successfuly!');
     }
     // if not 3 or higher, the department returns to N/A
     else{
-        student['deparment'] = "N/A";
-        alert('This student should be level 3 or higher');
+        alert('This student must be level 3');
     }
     //update the local storage
     data[student_id] = student;
