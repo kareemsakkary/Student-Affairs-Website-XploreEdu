@@ -21,12 +21,11 @@ function set_all_data() {
 const tbdoy = document.getElementById('main_tbody')
 const row_template = (name, id, gpa, email, phone,level,state = false,) => {
     let template = `
-    <td><input type="radio" name = 'id' value="${id}" class = 'select' required></td>
+    <td><input type="radio" name = 'id' value="${id}"  class = 'select' required></td>
     <td>${id}</td>
     <td>${name}</td>
     <td>${gpa}</td>
     <td>${level}</td>
-
     <td>${email}</td>
     <td>${phone}</td>
     `
@@ -35,12 +34,32 @@ const row_template = (name, id, gpa, email, phone,level,state = false,) => {
     }
     return template
 } 
+function check_departmen_able(e){
+
+    const department_button = document.querySelector('#department_submit')
+    department_button.disabled = false
+    const id_input = document.querySelector('input[name="id"]:checked');
+    const data = getData()
+    const student = data[id_input.value]
+    if(student['level'] < 3){
+        department_button.disabled = true
+    }
+}
+function set_onclick_disable_department(){
+    const rows = document.querySelectorAll('.select')
+    rows.forEach(element => {
+        element.addEventListener('click',(e)=>{
+            check_departmen_able(e)
+        })
+    });
+}
 function set_onclick_for_row(){
     const rows = document.querySelectorAll('.student_row')
     rows.forEach(element => {
-        element.addEventListener('click',()=>{
+        element.addEventListener('click',(e)=>{
             const id_input = element.querySelector('input[name="id"]');
             id_input.checked = true
+            check_departmen_able(e)
         })
     });
 }
@@ -57,16 +76,14 @@ function set_rows(rows,active_only = true) {
         if(active_only){
             template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['level'])
         }else{
-<<<<<<< HEAD
             template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['status'])
-=======
             template = row_template(student['name'], student['id'], student['gpa'], student['email'], student['phone'],student['level'],student['statues'])
->>>>>>> 0abf81a1bb6a8753bc9047cfa0341b5e38f650ae
         }
         row.innerHTML = template
         tbdoy.appendChild(row)
     }
     set_onclick_for_row()
+    set_onclick_disable_department()
 }
 const search_input = document.getElementById('search')
 function test_search_student(value, student) {
