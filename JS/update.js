@@ -26,8 +26,7 @@ window.onload = function(){
       }else if(student['gender']=='Female'){
         document.getElementById("option-2").checked= true;
     }
-    console.log(document.getElementById('option-1').checked);
-    console.log(document.getElementById('option-2').checked);
+
 
 }
 var clickOn = function(str){
