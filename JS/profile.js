@@ -27,7 +27,8 @@ window.onload = function(){
     document.getElementById("lvl").innerText = student['level'];
     document.getElementById("depart").innerText = student['department'];
     document.getElementById("status").innerText = student['status'];
-    document.getElementById("profilePic").setAttribute('src',student['pic']);
+    if (student['pic'])
+        document.getElementById("profilePic").setAttribute('src',student['pic']);
     //makes the current id a url parameter
     document.getElementById("submit_id").value = student_id;
 }
