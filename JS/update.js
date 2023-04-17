@@ -21,6 +21,9 @@ window.onload = function(){
     document.getElementById("level").value = student["level"];
     document.getElementById("deps").value = student["department"];
     document.getElementById("status").value = student["status"];
+    if(student['pic']){
+        document.getElementById("pic").setAttribute('src' , student['pic']);
+    }
     if(student["level"] == "2"){
       document.getElementById("level").remove(0);
     }else if(student["level"] == "3"){
