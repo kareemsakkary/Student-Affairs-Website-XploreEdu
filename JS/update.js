@@ -1,3 +1,4 @@
+
 var data = getData();
 
 // to get url parameters
@@ -73,6 +74,7 @@ var maleInput = document.getElementById('option-1').checked;
 var femaleInput = document.getElementById('option-2').checked;
 var levelInput = document.getElementById('level');
 var statusInput = document.getElementById('status');
+var departmentInput = document.getElementById('deps');
 var studentPhoneInput = document.getElementById('StudentNumber');
 var studentEmailInput = document.getElementById('StudentEmail');
   if (studentIdInput.value === '' || isNaN(studentIdInput.value) || studentIdInput.value < 0 || studentIdInput.value % 1 != 0) {
@@ -105,8 +107,8 @@ var studentEmailInput = document.getElementById('StudentEmail');
   }
   if (levelInput=="") {
     alert('Please select a level.');
-    return;
-  }
+    return;}
+
   if (statusInput=="") {
     alert('Please select a status.');
     return;
@@ -125,37 +127,43 @@ var studentEmailInput = document.getElementById('StudentEmail');
   return true;
 };
 document.getElementById('update').addEventListener('click',()=>{
-
-  if(student_id!=document.getElementById("StudentID").value){
-    data[document.getElementById("StudentID").value]=data[student_id];
-    delete data[student_id];
-    student_id=document.getElementById("StudentID").value;
-
+  if(validateForm()){
+    if(student_id!=document.getElementById("StudentID").value){
+      data[document.getElementById("StudentID").value]=data[student_id];
+      delete data[student_id];
+      student_id=document.getElementById("StudentID").value;
+      }
+ 
+    student['studentName'] = document.getElementById("StudentName").value;
+    student['Bdate'] = document.getElementById("StudentBDate").value;
+    student['GPA'] = document.getElementById("StudentGPA").value;
+    student['phone'] = document.getElementById("StudentNumber").value;
+    student['email'] = document.getElementById("StudentEmail").value;
+    student['level'] = document.getElementById("level").value;
+    student['status'] = document.getElementById("status").value;
+    student['department'] = document.getElementById("deps").value;
+    if(document.getElementById('option-1').checked){
+      student['gender']="Male";
+    }else if(document.getElementById('option-2').checked){
+      student['gender']="Female";
+  
     }
-  student['studentName'] = document.getElementById("StudentName").value;
-  student['Bdate'] = document.getElementById("StudentBDate").value;
-  student['GPA'] = document.getElementById("StudentGPA").value;
-  student['phone'] = document.getElementById("StudentNumber").value;
-  student['email'] = document.getElementById("StudentEmail").value;
-  student['level'] = document.getElementById("level").value;
-  student['status'] = document.getElementById("status").value;
-  student['department'] = document.getElementById("deps").value;
-  if(document.getElementById('option-1').checked){
-    student['gender']="Male";
-  }else if(document.getElementById('option-2').checked){
-    student['gender']="Female";
+  
+        
+  }  if((((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General"))||((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General")){
+    alert("Please select the correct department");
+    
+  }else{
+    //update the local storage
+    data[student_id] = student;
+    localStorage.setItem("data",JSON.stringify(data));
+    //makes the current id a url parameter
+    document.getElementById("StudentID").value = student_id;
+    alert("Student Updated Successfully");
 
   }
-
-  alert("Student Updated Successfully");
-
-  //update the local storage
-  data[student_id] = student;
-  localStorage.setItem("data",JSON.stringify(data));
-  //makes the current id a url parameter
-  document.getElementById("StudentID").value = student_id;
-
-})
+        
+});
 function deleteStudent(){
   if (confirm("Are you sure you want to delete this student?")==true){
     delete data[student_id];
