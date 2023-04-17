@@ -4,14 +4,14 @@
    }  
    #pic{
     padding: 20x;
-    width: 75%;
+    width: 120%;
    }
    .btn_form{
     padding: 20px;
-    width: 75%;
+    min-width: 100%;
    }
    .image{
-    margin-left: 250px;
+    margin-left: 178px;
    }
  
     .info{
@@ -19,7 +19,10 @@
     }
     form{
         width: 100%;
-        margin-left:100px;
+        margin-left:900px;
+    }
+    .btn{
+        margin-bottom: 5%;
     }
 }
     
