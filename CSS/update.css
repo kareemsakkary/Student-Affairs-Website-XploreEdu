@@ -103,7 +103,7 @@
     }
     
     .btn_form:hover {
-        background-color: var(--backgroud);
+        background-color: var(--background);
         color: var(--primary);
         border: 1px solid var(--primary);
     }
@@ -251,7 +251,7 @@
     margin-bottom : 35px;  
 }
     .btn:hover {
-        background-color: var(--backgroud);
+        background-color: var(--background);
         color: var(--primary);
         border: 1px solid var(--primary);
     }

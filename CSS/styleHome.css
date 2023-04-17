@@ -100,7 +100,7 @@ footer p{
     .menu .line{
         width: 30px;
         height: 3px;
-        background: va(--background);
+        background: var(--background);
         margin: 6px 0;
     }
     .nav-bar{

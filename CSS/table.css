@@ -2,7 +2,7 @@
   --primary: #560D0D;
   --darkprimary:#2b0606;
   --secondry: #EEE7E7;
-  --backgroud: #fff;
+  --background: #fff;
   font-size:1.4vw;
 
 }
@@ -45,7 +45,7 @@
 }
 
 body{
-    background-color: var(--backgroud);
+    background-color: var(--background);
     background-image: none;
 }
   /*input css*/
@@ -60,13 +60,13 @@ body{
     margin-right: 0.7vw;
 }
 .btn:disabled{
-  background-color: var(--backgroud);
+  background-color: var(--background);
   color : var(--primary);
   border: 1px solid var(--primary);
   cursor: not-allowed;
 }
 .btn:hover:enabled{
-    background-color: var(--backgroud);
+    background-color: var(--background);
     color : var(--primary);
     border: 1px solid var(--primary);
 }

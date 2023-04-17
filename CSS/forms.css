@@ -1,5 +1,5 @@
 body {
-    background-color: var(--backgroud);
+    background-color: var(--background);
 }
 
 .horz {
@@ -52,7 +52,7 @@ div img {
 }
 
 .btn_form:hover {
-    background-color: var(--backgroud);
+    background-color: var(--background);
     color: var(--primary);
     border: 1px solid var(--primary);
 }
@@ -96,7 +96,7 @@ div img {
 
 .section {
     margin-bottom: 2%;
-    background-color: var(--backgroud);
+    background-color: var(--background);
     border-radius: 5px;
     padding: 2%;
     /* background-color: #5a667f; */
