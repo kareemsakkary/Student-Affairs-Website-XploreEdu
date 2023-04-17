@@ -33,21 +33,21 @@
   </header>
   <h1>Update student data</h1>
   <br>
-  <form method=""   action="view_all.html">  
+  <form method="" action="profile.html">
     <div class="image">
       <img id="pic" src="img/default pp.png" style="align-items:center;" />
       <br>
-      <button class="btn_form"  type="button" onclick="clickOn('profilePic');">Add Image</button>
+      <button class="btn_form" type="button" onclick="clickOn('profilePic');">Add Image</button>
       <input id="profilePic" class="file-upload-input" type='file' onchange="readURL(this,'pic');" accept="image/*" />
     </div>
-<div class="info">
-<h2> Personal Info. </h2>
-<br><br>
+    <div class="info">
+      <h2> Personal Info. </h2>
+      <br><br>
       <div class="field">
-        <input type="number" id="StudentID"  disabled />
+        <input type="number" name="id" id="StudentID" disabled />
         <label for="StudentID"> ID </label>
       </div>
-      <br/>
+      <br />
       <div class="field">
         <input type="text" id="StudentName" required />
         <label for="StudentName"> Name </label>
@@ -59,19 +59,19 @@
           <label for="StudentBDate"> Birth Date </label>
           <input type="date" min="1950-01-01" max="2010-01-01" id="StudentBDate" required />
         </div>
-            <br>
-            <div class="wrapper" style="width:35%;">
-              <input type="radio"  id="option-1" value="Male" disabled>
-              <label for="option-1" class="option option-1">
-                <div class="dot"></div>
-                Male
-              </label>
-              <input type="radio"  id="option-2" value="Female" disabled>
-              <label for="option-2" class="option option-2">
-                <div class="dot"></div>
-                Female
-              </label>
-            </div>
+        <br>
+        <div class="wrapper" style="width:35%;">
+          <input type="radio" id="option-1" value="Male" disabled>
+          <label for="option-1" class="option option-1">
+            <div class="dot"></div>
+            Male
+          </label>
+          <input type="radio" id="option-2" value="Female" disabled>
+          <label for="option-2" class="option option-2">
+            <div class="dot"></div>
+            Female
+          </label>
+        </div>
       </div>
       <h2> <br><br><br><br>Educational Info. </h2>
       <br><br>
@@ -82,7 +82,7 @@
       <br>
       <div>
         <label for="level"> Level </label>
-        <select  id="level" required>
+        <select id="level" required>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -94,7 +94,7 @@
       <div>
 
         <label for="status"> Status </label>
-        <select  class="inp" id="status">
+        <select class="inp" id="status">
           <option value="Active">Active</option>
           <option value="Inactive">Inactive</option>
         </select>
@@ -119,7 +119,7 @@
 
       <br />
       <div class="buttonclass">
-        <input type="submit" class="btn"  placeholder="Update" id="update">
+        <input type="submit" class="btn" placeholder="Update" id="update">
         <input type="submit" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete"
           id="delete">
       </div>
