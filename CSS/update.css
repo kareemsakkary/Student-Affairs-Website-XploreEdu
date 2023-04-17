@@ -70,6 +70,13 @@
         border-bottom: 3px solid #ccc;
     
     }
+    #header{
+        background-color: var(--primary);
+        width: 100%;
+        text-align: center;
+        font-size: 36px;
+        color:white;
+      }
     #pic{
         border-radius: 50%;
     }
