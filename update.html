@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Update Data</title>
-  <link rel="icon" type="image/x-icon" href="img/icon.png">
-  <link rel="stylesheet" href="CSS/update.css">
-  <link rel="stylesheet" href="CSS/navbar.css">
-  <script src="JS/main.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="CSS/update.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <script src="JS/main.js"></script>
+
+
 </head>
-
-
 <body>
   <header>
     <a href="index.html" class="logo"> <img height="100" width="300" src="img/logo.png" alt="Website Logo" /></a>
@@ -32,117 +31,106 @@
   </header>
   <h1>Update student data</h1>
   <br>
-  <form method="" onsubmit="return validateForm()" action="view_all.html">
-    <div class="horz">
-      <div style="width: 15%;">
-        <img id="pic" src="img/default pp.png" alt=""="15%" />
-        <br>
-        <button class="btn_form" type="button" onclick="clickOn('profilePic');">Add Image</button>
+  <form method="post" onsubmit="return validateForm()">
+    
+      
+    <div class="image">
+      <img id="pic"  src="img/default pp.png" style="align-items:center;" />
+      <br>
+        <button class="btn_form " type="button" onclick="clickOn('profilePic');">Add Image</button>
         <input id="profilePic" class="file-upload-input" type='file' onchange="readURL(this,'pic');" accept="image/*" />
       </div>
+<div class="info">
+<h2> Personal Info. </h2>
+<br><br>
+    <div class="field">
+        <input type="number" id="StudentID" required />
+        <label for="StudentID"> ID </label>
+      </div>
+      <br />
+      <div class="field">
+        <input type="text" id="StudentName" required />
+        <label for="StudentName"> Name </label>
+
+      </div>
       <br>
-      <br>
-      <div style="width: 70%;">
-        <div class="section">
-          <div class="infotype">Personal Info</div>
-          <div class="info">
+      <div class="bdaygender">
+        <div class="bday" style="width:50%;">
+          <label for="StudentBDate"> Birth Date </label>
+          <input type="date"min="1950-01-01" max="2010-01-01" id="StudentBDate" required />
+        </div>
             <br>
-            <div class="field">
-              <label for="StudentID"> ID </label>
-              <input type="number" min="0" step="1" id="StudentID" />
-            </div>
-            <br />
-            <div class="field">
-              <label for="StudentName"> Name </label>
-              <input type="text" id="StudentName" required />
-            </div>
-            <br />
-            <div>
-              <label for="StudentBDate"> Birth Date </label>
-              <input type="date" id="StudentBDate" required />
-            </div>
-            <br>
-            <div class="wrapper" style="width:40%;">
+            <div class="wrapper" style="width:35%;">
               <input type="radio" name="gender" id="option-1" value="Male">
-              <input type="radio" name="gender" id="option-2" value="Female">
               <label for="option-1" class="option option-1">
                 <div class="dot"></div>
-                <span>Male</span>
+                Male
               </label>
+              <input type="radio" name="gender" id="option-2" value="Female">
               <label for="option-2" class="option option-2">
                 <div class="dot"></div>
-                <span>Female</span>
+                Female
               </label>
             </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <div class="section">
-          <div class="infotype">Educational Info. </div>
-          <div class="info">
-            <br>
-            <div class="field">
-              <label class="form__label" for="StudentGPA"> GPA </label>
-              <input type="number" class="form__field" min="0" max="4" step="0.01" id="StudentGPA" required />
-            </div>
-            <br>
-            <div>
-              <label class="select" for="level"> Level </label>
-              <select name="Level" id="level" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+      </div>
+<h2> <br><br><br><br>Educational Info. </h2>
+<br><br>
+      <div class ="field">
+        <input type="number" min="0"max="4" step="0.01"  id="StudentGPA" required/>
+        <label for="StudentGPA"> GPA </label>
+      </div>
+      <br >
+      <div >
+        <label for="level" > Level </label>
+        <select name="Level" id="level" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
 
-              </select>
-            </div>
-            <br>
-            <div>
+        </select>
+      </div>
+      <br>
+      <div >
 
-              <label class="select" for="status"> Status </label>
-              <select name="Status" class="inp" id="status" required>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </select>
-            </div>
-            <br>
-            <div>
-              <label for="deps"> Department </label>
-              <input type="text" class="readOnly" value="Computer Science" readonly id="deps" />
-            </div>
-          </div>
-        </div>
-        <br><br>
-        <div class="section">
-          <div class="infotype">Contact Info</div>
-          <div class="info">
-            <br>
-            <div class="field">
-              <label for="StudentNumber"> Phone Number </label>
-              <input type="tel" class="form__field" minlength="11" maxlength="11" onkeypress='validate(event)'
-                id="StudentNumber" required />
-            </div>
-            <br />
-            <div class="field">
-              <label for="StudentEmail"> Email </label>
-              <input type="email" id="StudentEmail" required />
-            </div>
-          </div>
-          <div>
-            <input type="submit" class="btn"  name="update" value="Update " placeholder="Update"
-              id="update">
-            <input type="submit" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete"
-              id="delete">
-          </div>
-        </div>
-  </form>
+        <label for="status"> Status </label>
+        <select name="Status" class="inp" id="status" required>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <br>
+      <div >
+        <label for="deps"> Department </label>
+        <input type="text" class="readOnly" value="N/A" readonly id="deps" />
+      </div>
+      <br><br><br>
+      <h2> Contact Info. </h2>
+<br><br>
+      <div class ="field">
+        <input type="tel" class="form__field" minlength="11" maxlength="11" onkeypress='validate(event)' id="StudentNumber" required />
+        <label for="StudentNumber"> Phone Number </label>
+      </div>
+      <br />
+      <div class ="field">
+        <input type="email" class="inp" id="StudentEmail" required />
+        <label for="StudentEmail"> Email </label>
+      </div>
+    
+      <br />
+      <div class="buttonclass">
+        <input type="submit" class="btn"  name="update" value="Update " placeholder="Update"
+        id="update">
+      <input type="submit" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete"
+        id="delete">
+      </div>
+    </div>
+    </form>
   <footer>
-    <p>Copyright &copy; 2023 The President and Fellows of the College </p>
+    <p>Copyright &copy; 2023 The President and Fellows of the College </p> 
   </footer>
   <script src="JS/home.js"></script>
   <script src="JS/update.js"></script>
 
 </body>
-
 </html>
