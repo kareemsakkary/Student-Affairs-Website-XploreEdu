@@ -29,7 +29,11 @@ window.onload = function(){
       document.getElementById("level").remove(0);
     }
     document.getElementById("status").value = student["status"];
-    document.getElementById("pic").setAttribute('src',student['pic']);
+    if(student['pic'])
+    {
+      document.getElementById("pic").setAttribute('src',student['pic']);
+
+    }
       if(student['gender']=='Male'){
         document.getElementById("option-1").checked= true;
       }else if(student['gender']=='Female'){
