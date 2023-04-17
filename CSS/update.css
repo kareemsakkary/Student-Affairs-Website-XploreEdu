@@ -132,7 +132,7 @@
       }
     input:focus + label ,
     input:valid + label ,
-    input:disabled + label{ 
+    input:read-only + label{ 
         top: -20px;
         color:#8e8d8d;
         font-size: 16px;
