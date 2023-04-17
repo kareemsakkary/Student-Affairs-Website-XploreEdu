@@ -27,13 +27,21 @@
         margin: 15px;
     }
     
+    h1{
+        font-size: 35px;
+        font-weight: 600px;
+        text-align: center;
+        background-color: #560D0D;
+        color: #fff;
+        font-size: 36px;
+        color:white;
+    }
     #header{
         background-color: var(--primary);
         width: 100%;
         text-align: center;
-        font-size: 36px;
-        color:white;
-      }
+        margin-bottom: 1rem;
+    }
         
     h2{
         margin-top: 1;
