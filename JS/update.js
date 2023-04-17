@@ -22,6 +22,7 @@ window.onload = function(){
     document.getElementById("level").value = student["level"];
     document.getElementById("deps").value = student["department"];
     document.getElementById("status").value = student["status"];
+    document.getElementById("pic").setAttribute('src',student['pic']);
       if(student['gender']=='Male'){
         document.getElementById("option-1").checked= true;
       }else if(student['gender']=='Female'){
@@ -38,7 +39,8 @@ function readURL(input , str) {
       var reader = new FileReader();
 
       reader.onload = function (e) {
-          document.getElementById(str).setAttribute('src', e.target.result);
+          // document.getElementById(str).setAttribute('src', e.target.result);
+          // student['pic'] = e.target.result;
           // $('#img')
           //     .attr('src', e.target.result)
       };

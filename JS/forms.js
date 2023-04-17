@@ -1,12 +1,15 @@
 var clickOn = function(str){
     document.getElementById(str).click();
 }
+var student={};
+
 function readURL(input , str) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
   
         reader.onload = function (e) {
             document.getElementById(str).setAttribute('src', e.target.result);
+            student['pic'] = e.target.result;
             // $('#img')
             //     .attr('src', e.target.result)
         };
@@ -53,7 +56,6 @@ var subm = function(){
         document.getElementById("sub").click();
         console.log(getData(),size());
     }else{
-        var student={};
         var li = document.getElementsByTagName("input");
         for(var i of li){
             var name = i.getAttribute("id");
@@ -77,7 +79,7 @@ var subm = function(){
         student['gender'] = document.querySelector('input[name="gender"]:checked').value;
         var id = getID(size());
         setStudent(id,student);
-        location.replace("view_all.html");
+        // location.replace("view_all.html");
     }
 }
 var level_change = function(sel){
