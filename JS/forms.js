@@ -79,7 +79,7 @@ var subm = function(){
         student['gender'] = document.querySelector('input[name="gender"]:checked').value;
         var id = getID(size());
         setStudent(id,student);
-        // location.replace("view_all.html");
+        location.replace("view_all.html");
     }
 }
 var level_change = function(sel){
