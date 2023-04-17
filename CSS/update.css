@@ -88,8 +88,9 @@
     }
     .image img {
         align-items: center;
-        width: 225px;
-        border-radius: 8px;
+        width: 210px;
+        height:210px;
+       border-radius: 8px;
     }
     .btn_form {
     border: 0;
