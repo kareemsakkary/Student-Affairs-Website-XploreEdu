@@ -51,6 +51,7 @@ function readURL(input , str) {
 
       reader.onload = function (e) {
           document.getElementById(str).setAttribute('src', e.target.result);
+          student['pic'] = e.target.result;
           // $('#img')
           //     .attr('src', e.target.result)
       };
