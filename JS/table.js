@@ -43,9 +43,9 @@ function check_departmen_able(e){
     const id_input = document.querySelector('input[name="id"]:checked');
     const data = getData()
     const student = data[id_input.value]
-    if(student['level'] < 3){
+    if(student['level'] != 3){
         department_button.disabled = true
-        department_button.title = 'Student Must Be level three or higher'
+        department_button.title = 'Student must be level three'
     }
 }
 function set_onclick_disable_department(){
