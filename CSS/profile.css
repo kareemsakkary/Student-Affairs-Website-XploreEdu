@@ -1,5 +1,5 @@
 body{
-  background-color: #FFF ;
+  background-color: var(--background) ;
   /* e2e8f0  D1D0D1*/
 }
 hr{
@@ -25,7 +25,7 @@ hr{
   float: left;
   overflow: auto;
   border-radius: 5px;
-  background-color: #FFF;
+  background-color: var(--background);
   padding: 1%;
   margin-left: 1%;
 }
@@ -52,7 +52,7 @@ hr{
   height: 50%;
   margin-left: 1%;
   margin-top: 10px;
-  background-color: var(--backgroud);
+  background-color: var(--background);
   overflow: hidden;
   float: right;
   border-radius: 5px;
@@ -100,7 +100,7 @@ hr{
 
 
 .btn:hover {
-  background-color: var(--backgroud);
+  background-color: var(--background);
   color: var(--primary);
   border: 1px solid var(--primary);
 }

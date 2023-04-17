@@ -2,7 +2,7 @@
     --primary: #560D0D;
     --darkprimary:#2b0606;
     --secondry: #EEE7E7;
-    --backgroud: #fff;
+    --background: #fff;
 }
 
 *{
@@ -53,7 +53,7 @@ header{
     
 }
 .nav-bar ul li a:hover{
-    background-color: #560D0D;
+    background-color: var(--primary);
     transition: 0.5s;
 }
 
@@ -82,7 +82,7 @@ footer p{
     .menu .line{
         width: 30px;
         height: 3px;
-        background: white;
+        background: var(--background);
         margin: 6px 0;
     }
     .nav-bar{

@@ -1,3 +1,9 @@
+:root {
+    --primary: #560D0D;
+    --darkprimary:#2b0606;
+    --secondry: #EEE7E7;
+    --background: #fff;
+}
 *{
     padding: 0;
     margin: 0;
@@ -23,13 +29,13 @@ body{
 body span{
     text-align: center;
     font-size: 70px;
-    color: #560D0D;
+    color: var(--primary);
     font-weight: 800;
 }
 body p{
     text-align: center;
     font-size: 30px;
-    color: white;
+    color: var(--background);
     font-weight: 800;
     margin-top: 25vh;
     padding: 0 200px;
@@ -68,7 +74,7 @@ header{
     
 }
 .nav-bar ul li a:hover{
-    background-color: #560D0D;
+    background-color: var(--primary);
     transition: 0.5s;
 }
 
@@ -94,7 +100,7 @@ footer p{
     .menu .line{
         width: 30px;
         height: 3px;
-        background: white;
+        background: va(--background);
         margin: 6px 0;
     }
     .nav-bar{

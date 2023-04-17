@@ -24,18 +24,10 @@
 }
     
     form{
-        margin: 2% 10% 0% 4%;
+        margin: 0% 10% 0% 4%;
        
     }
-    
-    h1{
-        font-weight: 600px;
-        text-align: center;
-        background-color: #560D0D;
-        color: #fff;
-        font-size: 36px;
-        color:white;
-    }
+ 
     #header{
         background-color: var(--primary);
         width: 100%;
@@ -43,7 +35,7 @@
         margin-bottom: 1rem;
     }
         
-    h2{
+    h1{
         margin-top: 1;
         font-weight: bold;
         font-size: 26px;
@@ -167,14 +159,14 @@
         height:85px ;   
         width: 35%;
         display: inline-flex;
-        background: #fff;
+        background: var(--background);
         align-items: center;
         justify-content: space-evenly;
         border-radius: 5px;
     }
     
     .wrapper .option {
-        background: #fff;
+        background: var(--background);
         height: 100%;
         width: 100%;
         display: flex;
@@ -228,7 +220,7 @@
     
     .wrapper #option-1:checked:checked~.option-1 .dot,
     .wrapper #option-2:checked:checked~.option-2 .dot {
-        background: #fff;
+        background: var(--background);
     }
     
     .wrapper #option-1:checked:checked~.option-1 .dot::before,
