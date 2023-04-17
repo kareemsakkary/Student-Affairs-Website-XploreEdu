@@ -156,22 +156,17 @@ document.getElementById('update').addEventListener('click',()=>{
       student['gender']="Female";
   
     }
-  
+    alert("Student Updated Successfully");
         
-  }  if((((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General"))||((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General")){
-    alert("Please select the correct department");
-    
-  }else{
+  } 
     //update the local storage
     data[student_id] = student;
     localStorage.setItem("data",JSON.stringify(data));
     //makes the current id a url parameter
     document.getElementById("StudentID").value = student_id;
-    alert("Student Updated Successfully");
-
   }
         
-});
+);
 function deleteStudent(){
   if (confirm("Are you sure you want to delete this student?")==true){
     delete data[student_id];
