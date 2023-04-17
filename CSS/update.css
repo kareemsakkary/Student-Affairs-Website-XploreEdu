@@ -1,260 +1,88 @@
-@media(max-width: 1063px){
-    .horz{
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      justify-content: center;
-      align-items: center;
+@media(max-width: 1100px){
+   input{
+    width: 25%;
+   }  
+   #pic{
+    padding: 20x;
+    width: 75%;
+   }
+   .btn_form{
+    padding: 20px;
+    width: 75%;
+   }
+   .image{
+    margin-left: 250px;
+   }
+ 
+    .info{
+        width:100%;
     }
-    
-}
-
-    
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-
-h1{
-    font-size: 35px;
-    font-weight: 600px;
-    background-color: #560D0D;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.hidden{
-    display: none;
-}
-.readOnly{
-    background-color: #ccc;
-    color: rgb(106, 102, 102);
-}
-
-.horz {
-    display: inline-flex;
-    width: 98%;
-    margin: 1%;
-}
-
-.horz div {
-    margin-left: 2%;
-}
-
-div img {
-    align-self: center;
-    border-radius: 50%;
-    width: 200px;
-    margin-left: 2%;
+    form{
+        width: 100%;
+        margin-left:100px;
+    }
    
 }
-
-.btn_form {
+    
+    
+     h1{
+        font-size: 35px;
+        font-weight: 600px;
+        background-color: #560D0D;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1rem;
+     }
+        
+    h2{
+        margin-top: 1;
+        font-weight: bold;
+        font-size: 26px;
+        color: var(--primary);
+    }
+    label{
+        margin-left: 25px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        display: inline;
+        font-size: 16px;
+        color: #8e8d8d;
+    }
+    input, select {
+        margin-left: 25px;
+        border: none;
+        outline: none;
+        padding: 5px 5px 8px 0px;
+        width: 100%;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        border-bottom: 3px solid #ccc;
+    
+    }
+  
+    .image, .info{
+        float: left;
+    }
+    .image{
+        width: 20%;
+    }
+    .info{
+        width: 80%;
+    }
+    .image img {
+        align-items: center;
+        width: 250px;
+        border-radius: 8px;
+       
+    }
+    .btn_form {
     border: 0;
     text-align: center;
-    display: flex;
-    padding: 7% 30%;
-    margin-left: 6%;
-    margin-top: 2%;
-    margin-bottom: 5%;
-    color: #ffffff;
-    background-color: var(--primary);
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: box-shadow 200ms ease-out;
-    cursor: pointer;
-}
-
-.btn_form:hover {
-    background-color: var(--backgroud);
-    color: var(--primary);
-    border: 1px solid var(--primary);
-}
-
-.file-upload-input {
-    display: none;
-
-}
-
-
-.personalinfo,
-.studinfo,
-.continfo {
-    width: 74%;
-    height: 50%;
-    margin-left: 1%;
-    margin-top: 10px;
-    box-shadow: 3px 2px 2px 1px #1514141c;
-    background-color: rgba(255, 255, 255, 0);
-    overflow: hidden;
-    float: right;
-}
-
-.info {
-    margin-left: 3%;
-    display: flex;
-    flex-direction: column;
-}
-
-.info span {
-    text-align: center;
-    color: grey;
-}
-
-
-.infotype {
-    margin-top: 1;
-    font-weight: bold;
-    font-size: 26px;
-    color: var(--primary);
-}
-
-.section {
-    margin-bottom: 2%;
-    background-color: var(--backgroud);
-    border-radius: 5px;
-    padding: 2%;
-    /* background-color: #5a667f; */
-
-}
-.section:last-child{
-    margin-bottom: 1%;
-
-}
-
-/* radio btn */
-.wrapper {
-    margin-top: 15px;
-    margin-right: 0px;
-    display: inline-flex;
-    background: #fff;
-    height: 60px;
-    width: 300px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 5px;
-    padding: 10px 15px;
-}
-
-.wrapper .option {
-    background: #fff;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 0 10px;
-    border: 2px solid lightgrey;
-    transition: all 0.3s ease;
-}
-
-.wrapper .option .dot {
-    height: 20px;
-    width: 20px;
-    background: #d9d9d9;
-    border-radius: 50%;
-    position: relative;
-}
-
-.wrapper .option .dot::before {
-    position: absolute;
-    content: "";
-    top: 4px;
-    left: 4px;
-    width: 12px;
-    height: 12px;
-    background: var(--primary);
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(1.5);
-    transition: all 0.3s ease;
-}
-
-.wrapper input[type="radio"] {
-    display: none;
-}
-
-.wrapper input[type="checkbox"] {
-    display: none;
-}
-
-.wrapper #option-1:checked:checked~.option-1,
-.wrapper #option-2:checked:checked~.option-2 {
-    border-color: var(--primary);
-    background: var(--primary);
-}
-
-.wrapper #option-1:checked:checked~.option-1 .dot,
-.wrapper #option-2:checked:checked~.option-2 .dot {
-    background: #fff;
-}
-
-.wrapper #option-1:checked:checked~.option-1 .dot::before,
-.wrapper #option-2:checked:checked~.option-2 .dot::before {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.wrapper #option-1:checked:checked~.option-1 span,
-.wrapper #option-2:checked:checked~.option-2 span {
-    color: #fff;
-}
-
-label{
-    position: relative;
-    top: 0px;
-    left: 0px;
-    display: inline;
-    font-size: 22px;
-}
-input, select {
-    border: none;
-    outline: none;
-    padding: 5px 5px 8px 0px;
-    width: 100%;
-    font-size: 18px;
-    border-bottom: 2px solid #9b9b9b;
-
-}
-
-.field{
-    border: none;
-    outline: none;
-    position: relative;
-    margin: 0 0 20px 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-  .field input{
-    background: transparent;
-   transition: border-color 0.2s;
-    border-bottom: 2px solid #9b9b9b;
-    outline: none;
-  }
- label{
-    position: relative;
-    top: 0;
-    left: 0;
-    padding: 0 5px;
-    font-size: 18px;
-    color: #8e8d8d;
-    transition: all 0.2s;
-    pointer-events: none;
-} 
-.btn{
-    display: inline-block;;
-    position: relative;
-    width: 250px;
+    display: block;
     padding: 14px;
-    margin: 50px;
-    align-items: center;
+    width: 80%;
     color: #ffffff;
     background-color: var(--primary);
     border-radius: 8px;
@@ -262,10 +90,165 @@ input, select {
     text-decoration: none;
     transition: box-shadow 200ms ease-out;
     cursor: pointer;
+    }
+    
+    .btn_form :hover {
+        background-color: var(--backgroud);
+        color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+    
+    .file-upload-input {
+        display: none;
+    }
+    
+    .field{
+        border: none;
+        outline: none;
+        position: relative;
+        margin: 0 0 20px 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+      .field input{
+        margin-left: 25px;
+    
+      }
+      .field label {
+        color: #560D0D;
+        margin-left: 25px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        cursor: text;
+        align-items: center;
+        transition: all 0.2s ease;
+        font-size: 18px;
+      }
+    input:focus + label ,
+    input:valid + label {
+        top: -20px;
+        color:#8e8d8d;
+        font-size: 16px;
+    }
+    
+    
+    .readOnly{
+        background-color: #ccc;
+        color: rgb(106, 102, 102);
+    }
+    
+    /* radio btn */
+    .wrapper {
+        float: left;
+        padding: 25px;
+        height:85px ;   
+        width: 35%;
+        display: inline-flex;
+        background: #fff;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 5px;
+    }
+    
+    .wrapper .option {
+        background: #fff;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 0 10px;
+        border: 2px solid lightgrey;
+        transition: all 0.3s ease;
+    }
+    
+    .wrapper .option .dot {
+        height: 20px;
+        width: 20px;
+        background: #d9d9d9;
+        border-radius: 50%;
+        position: relative;
+    }
+    
+    
+    .wrapper .option .dot::before {
+        position: absolute;
+        content: "";
+        top: 4px;
+        left: 4px;
+        width: 12px;
+        height: 12px;
+        background: var(--primary);
+        border-radius: 50%;
+        opacity: 0;
+        transform: scale(1.5);
+        transition: all 0.3s ease;
+    }
+    
+    .wrapper input[type="radio"] {
+        display: none;
+    }
+    
+    .wrapper input[type="checkbox"] {
+        display: none;
+    }
+    
+    .wrapper #option-1:checked:checked~.option-1,
+    .wrapper #option-2:checked:checked~.option-2 {
+        border-color: var(--primary);
+        background: var(--primary);
+        color: #fff;
+    }
+    
+    .wrapper #option-1:checked:checked~.option-1 .dot,
+    .wrapper #option-2:checked:checked~.option-2 .dot {
+        background: #fff;
+    }
+    
+    .wrapper #option-1:checked:checked~.option-1 .dot::before,
+    .wrapper #option-2:checked:checked~.option-2 .dot::before {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .wrapper #option-1:checked:checked~.option-1 span,
+    .wrapper #option-2:checked:checked~.option-2 span {
+        color: #fff;
+    }
+    /*button*/
+    .btn{
+        display: inline;
+        width: 250px;
+        padding: 14px;
+        align-items: center;
+        color: #ffffff;
+        background-color: var(--primary);
+        border-radius: 8px;
+        font-weight: 600;
+        transition: box-shadow 200ms ease-out;
+        cursor: pointer;
+    }
+    .buttonclass{
+        text-align: center;
+    margin-bottom : 35px;  
 }
-
-.btn:hover {
-    background-color: var(--backgroud);
-    color: var(--primary);
-    border: 1px solid var(--primary);
-}
+    .btn:hover {
+        background-color: var(--backgroud);
+        color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+    
+    .bdaygender{
+        display: inline;
+     
+     }
+     .bday{
+         float: left;
+         margin-right: 20px;
+     }
+     
