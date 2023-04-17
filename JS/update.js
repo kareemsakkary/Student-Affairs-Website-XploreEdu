@@ -22,11 +22,12 @@ window.onload = function(){
     document.getElementById("level").value = student["level"];
     document.getElementById("deps").value = student["department"];
     document.getElementById("status").value = student["status"];
-    document.getElementById("pic").setAttribute('src',student['pic']);
-      if(student['gender']=='Male'){
-        document.getElementById("option-1").checked= true;
-      }else if(student['gender']=='Female'){
-        document.getElementById("option-2").checked= true;
+    if(student['pic']) 
+      document.getElementById("pic").setAttribute('src',student['pic']);
+    if(student['gender']=='Male'){
+      document.getElementById("option-1").checked= true;
+    }else if(student['gender']=='Female'){
+      document.getElementById("option-2").checked= true;
     }
 
 
@@ -152,9 +153,9 @@ document.getElementById('update').addEventListener('click',()=>{
     }
   
         
-  }  if((((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General"))||((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General")){
+  } 
+  if((((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General"))||((document.getElementById("level").value==1)||(document.getElementById("level").value==2))&&(document.getElementById("deps").value!="General")){
     alert("Please select the correct department");
-    
   }else{
     //update the local storage
     data[student_id] = student;
@@ -162,9 +163,7 @@ document.getElementById('update').addEventListener('click',()=>{
     //makes the current id a url parameter
     document.getElementById("StudentID").value = student_id;
     alert("Student Updated Successfully");
-
-  }
-        
+  }        
 });
 function deleteStudent(){
   if (confirm("Are you sure you want to delete this student?")==true){
