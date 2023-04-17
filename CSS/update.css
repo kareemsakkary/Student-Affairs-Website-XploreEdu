@@ -32,7 +32,9 @@
         background-color: var(--primary);
         width: 100%;
         text-align: center;
-        margin-bottom: 1rem;
+        font-size: 36px;
+        color:white;
+        font-family: 'Kanit', sans-serif;
     }
         
     h1{
@@ -40,6 +42,7 @@
         font-weight: bold;
         font-size: 26px;
         color: var(--primary);
+        font-family: 'Kanit', sans-serif;
     }
     label{
         margin-left: 25px;
@@ -49,6 +52,7 @@
         display: inline;
         font-size: 16px;
         color: #8e8d8d;
+        font-family: 'Kanit', sans-serif;
     }
     input, select {
         margin-left: 25px;
@@ -60,15 +64,13 @@
         outline: none;
         border: none;
         border-bottom: 3px solid #ccc;
+        font-family: 'Kanit', sans-serif;
     
     }
-    #header{
-        background-color: var(--primary);
-        width: 100%;
-        text-align: center;
-        font-size: 36px;
-        color:white;
-      }
+    select option{
+        font-family: 'Kanit', sans-serif;
+    }
+
     #pic{
         border-radius: 50%;
     }
@@ -100,6 +102,7 @@
     transition: box-shadow 200ms ease-out;
     cursor: pointer;
     margin-left: 8%;
+    font-family: 'Kanit', sans-serif;
     }
     
     .btn_form:hover {
@@ -135,6 +138,7 @@
         align-items: center;
         transition: all 0.2s ease;
         font-size: 18px;
+        font-family: 'Kanit', sans-serif;
       }
     input:focus + label ,
     input:valid + label ,
@@ -178,6 +182,7 @@
         padding: 0 10px;
         border: 2px solid lightgrey;
         transition: all 0.3s ease;
+        
     }
     
     .wrapper .option .dot {
@@ -245,10 +250,11 @@
         font-weight: 600;
         transition: box-shadow 200ms ease-out;
         cursor: pointer;
+        font-family: 'Kanit', sans-serif;
     }
     .buttonclass{
         text-align: center;
-    margin-bottom : 35px;  
+        margin-bottom : 35px;  
 }
     .btn:hover {
         background-color: var(--background);
@@ -263,6 +269,7 @@
      .bday{
          float: left;
          margin-right: 20px;
+         
      }
      
      

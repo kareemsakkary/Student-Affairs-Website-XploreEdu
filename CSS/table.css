@@ -11,12 +11,17 @@
 }
 
 
+.table td, .table th{
+  font-family: 'Kanit', sans-serif;
+}
+
 #header{
   background-color: var(--primary);
   font-size: 36px;
   width: 100%;
   text-align: center;
   color:white;
+  font-family: 'Kanit', sans-serif;
 }
 .student_row{
   cursor: pointer;
@@ -58,6 +63,7 @@ body{
     border-radius: 0.2vw;
     font-weight: 600;
     margin-right: 0.7vw;
+    font-family: 'Kanit', sans-serif;
 }
 .btn:disabled{
   background-color: var(--background);
@@ -72,6 +78,8 @@ body{
 }
 .search{
     padding: 0.2rem;
+    font-family: 'Kanit', sans-serif;
+    
 }
 .select:active{
     outline: var(--primary);

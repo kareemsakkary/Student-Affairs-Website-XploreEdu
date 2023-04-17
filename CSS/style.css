@@ -6,11 +6,13 @@
   text-align: center;
   font-size: 36px;
   color:white;
+  font-family: 'Kanit', sans-serif;
 }
 .btn{
   background-color: var(--secondry);
   color : white;
   transition: all ease 0.5s;
+  font-family: 'Kanit', sans-serif;
 }
 
 .btn:hover{
@@ -35,6 +37,7 @@
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
+  font-family: 'Kanit', sans-serif;
   }
   .form__field::placeholder {
     color: transparent;
@@ -43,6 +46,7 @@
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
+    font-family: 'Kanit', sans-serif;
   }
   .form__label {
     position: absolute;
@@ -51,6 +55,7 @@
     transition: 0.2s;
     font-size: 1rem;
     color: #9b9b9b;
+    font-family: 'Kanit', sans-serif;
   }
   .form__field:focus {
     padding-bottom: 6px;
@@ -67,6 +72,7 @@
     font-size: 1rem;
     color: var(--primary);
     font-weight: 700;
+    font-family: 'Kanit', sans-serif;
   }
   /* reset input */
   .form__field:required, .form__field:invalid {

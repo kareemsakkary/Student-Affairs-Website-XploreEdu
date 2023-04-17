@@ -19,7 +19,7 @@ body {
     flex-direction: column;
   }
 body{
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Kanit', sans-serif;
     background: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,7 +37,7 @@ body p{
     font-size: 30px;
     color: var(--background);
     font-weight: 800;
-    margin-top: 25vh;
+    margin-top: 21vh;
     padding: 0 200px;
 }
 header{

@@ -22,6 +22,7 @@ header div{
     text-align: center;
     font-size: 36px;
     color:white;
+    font-family: 'Kanit', sans-serif;
 }
 footer{
     flex-shrink: 0; 
@@ -38,6 +39,8 @@ footer div{
     font-size: 20px;
     padding-bottom: 8px;
     color: white;
+    font-family: 'Kanit', sans-serif;
+   
 }
 
 .row{
@@ -72,7 +75,7 @@ footer div{
 }
 .card img:hover{
     opacity: 0.5;
-	transition: 0.3s ease-in-out;
+	transition: 0.1s ease-in-out;
 }
 
 
@@ -83,6 +86,7 @@ footer div{
     text-align: center;
     background-color: #560D0D;
     color: white;
+    font-family: 'Kanit', sans-serif;
 
 }
 @media(max-width: 1063px){
@@ -99,9 +103,11 @@ footer div{
         min-width: 230px;
         max-width: 860px;
         height: 170px;
-    
         margin-bottom: 5%;
         position: relative;
+    }
+    .site{
+        font-size: 17px;
     }
 
     header,    
