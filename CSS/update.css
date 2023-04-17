@@ -21,9 +21,7 @@
         width: 100%;
         margin-left:100px;
     }
-   
 }
-
     
     form{
         margin: 15px;
@@ -64,7 +62,9 @@
         border-bottom: 3px solid #ccc;
     
     }
-  
+    #pic{
+        border-radius: 50%;
+    }
     .image, .info{
         float: left;
     }
@@ -131,7 +131,8 @@
         font-size: 18px;
       }
     input:focus + label ,
-    input:valid + label {
+    input:valid + label ,
+    input:disabled + label{ 
         top: -20px;
         color:#8e8d8d;
         font-size: 16px;
