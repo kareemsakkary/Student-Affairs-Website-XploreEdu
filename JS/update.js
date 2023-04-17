@@ -12,7 +12,6 @@ window.onload = function(){
     if (student == undefined)
         return;
     //display student info
-    console.log(student);
     document.getElementById("StudentID").value = student_id;
     document.getElementById("StudentName").value = student["studentName"];
     document.getElementById("StudentBDate").value = student["Bdate"];
@@ -21,18 +20,16 @@ window.onload = function(){
     document.getElementById("StudentEmail").value = student["email"];
     document.getElementById("level").value = student["level"];
     document.getElementById("deps").value = student["department"];
-    if(student["department"] == "General"){
-      document.getElementById("level").remove(3);
-      document.getElementById("level").remove(2);
-    }else{
+    document.getElementById("status").value = student["status"];
+    if(student["level"] == "2"){
+      document.getElementById("level").remove(0);
+    }else if(student["level"] == "3"){
       document.getElementById("level").remove(1);
       document.getElementById("level").remove(0);
-    }
-    document.getElementById("status").value = student["status"];
-    if(student['pic'])
-    {
-      document.getElementById("pic").setAttribute('src',student['pic']);
-
+    }else if(student["level"] == "4"){
+      document.getElementById("level").remove(2);
+      document.getElementById("level").remove(1);
+      document.getElementById("level").remove(0);
     }
       if(student['gender']=='Male'){
         document.getElementById("option-1").checked= true;
