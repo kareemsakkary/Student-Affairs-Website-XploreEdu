@@ -3,6 +3,13 @@
   background-color: var(--backgroud);
 } */
 /*input css*/
+#header{
+  background-color: var(--primary);
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  color:white;
+}
 .btn{
   background-color: var(--secondry);
   color : white;
