@@ -3,8 +3,9 @@
     width: 25%;
    }  
    #pic{
-    padding: 20x;
     width: 120%;
+    height: 100%;
+
    }
    .btn_form{
     padding: 20px;
@@ -88,8 +89,8 @@
     }
     .image img {
         align-items: center;
-        width: 210px;
-        height:210px;
+        width: 180px;
+        height:190px;
        border-radius: 8px;
     }
     .btn_form {
@@ -97,7 +98,7 @@
     text-align: center;
     display: block;
     padding: 14px;
-    width: 70%;
+    width: 51%;
     color: #ffffff;
     background-color: var(--primary);
     border-radius: 8px;
