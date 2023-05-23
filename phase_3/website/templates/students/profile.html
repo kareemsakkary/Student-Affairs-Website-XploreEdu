@@ -12,7 +12,7 @@
   <div id="header">Student Profile</div>
   <div class="rwd">
     <div class="card">
-      <img src="{% static 'img/default pp.png' %}" id="profilePic" alt="" width="150" />
+      <img src="/media/{{student.picture}}" id="profilePic" alt="" width="150" />
       <div class="lower">
         <div>
           <form method="POST" action="/xploreedu/update/">

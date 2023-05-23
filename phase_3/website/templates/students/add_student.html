@@ -9,7 +9,7 @@
 {% endblock head %}
 {% block body %}
 <div id="header">Add Students</div>
-<form id= "form" method="POST">
+<form id= "form" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="horz">
     <div id="img_cont">

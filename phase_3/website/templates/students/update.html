@@ -11,7 +11,8 @@
 {% block body %}
   <div id="header">Update Student Data</div>
   <br>
-  <form method="" action="/xploreedu/profile/">
+  <form method="POST" action="/xploreedu/profile/" enctype="multipart/form-data">
+    {% csrf_token %}
     <div class="image">
       <img id="pic" src="{%static 'img/default pp.png'%}" style="align-items:center;" />
       <br>
