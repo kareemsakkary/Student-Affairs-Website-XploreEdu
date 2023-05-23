@@ -35,7 +35,7 @@ def add_student(request):
             email = request.POST.get('studentEmail'),
             level = request.POST.get('level'),
             department = depart,
-            picture = request.POST.get('pimg')
+            picture = request.FILES('pimg')
         )
         data.save()
     return render(request, 'students/add_student.html')
