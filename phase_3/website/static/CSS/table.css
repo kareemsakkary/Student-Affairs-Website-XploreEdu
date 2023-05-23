@@ -1,0 +1,118 @@
+:root {
+  --primary: #560D0D;
+  --darkprimary:#2b0606;
+  --secondry: #EEE7E7;
+  --background: #fff;
+  font-size:1.4vw;
+
+}
+.button_container{
+  padding: 0 1.45vw;
+}
+
+
+.table td, .table th{
+  font-family: 'Kanit', sans-serif;
+}
+
+#header{
+  background-color: var(--primary);
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  color:white;
+  font-family: 'Kanit', sans-serif;
+}
+.student_row{
+  cursor: pointer;
+}
+#main_table{
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 40px 0;
+  border-radius: 1.5vw;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #c6c0c0;
+  vertical-align: middle;
+  font-size: 1.6vw;
+}
+.table-header{
+  background-color: #560D0D;
+  color: white;
+  font-weight: bold;
+}
+#main_table th, #main_table td{
+  padding: .5rem .5rem;
+}
+#main_table tbody tr:nth-of-type(odd){
+ background-color: #f3f3f3;
+}
+
+body{
+    background-color: var(--background);
+    background-image: none;
+}
+  /*input css*/
+.btn{
+    background-color: var(--primary);
+    color : white;
+    transition: all ease 0.5s;
+    border: 0;
+    text-align: center;
+    border-radius: 0.2vw;
+    font-weight: 600;
+    margin-right: 0.7vw;
+    font-family: 'Kanit', sans-serif;
+}
+.btn:disabled{
+  background-color: var(--background);
+  color : var(--primary);
+  border: 1px solid var(--primary);
+  cursor: not-allowed;
+}
+.btn:hover:enabled{
+    background-color: var(--background);
+    color : var(--primary);
+    border: 1px solid var(--primary);
+}
+.search{
+    padding: 0.2rem;
+    font-family: 'Kanit', sans-serif;
+    
+}
+.select:active{
+    outline: var(--primary);
+}
+
+input[type='radio'] {
+    accent-color: var(--primary);
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: 1px solid var(--secondry);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem white;
+}
+a{
+  text-decoration: none;
+}
+.footr{
+  margin-top: 3.3vw;
+}
+@media(max-width: 1063px){
+  :root {
+
+    font-size:2.27vw;
+  
+  }
+  #main_table{
+    font-size:2.1vw;
+
+  }
+  .btn{
+    font-size:2.1vw;
+
+  }
+}
