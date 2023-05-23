@@ -3,9 +3,8 @@
     width: 25%;
    }  
    #pic{
+    padding: 20x;
     width: 120%;
-    height: 100%;
-
    }
    .btn_form{
     padding: 20px;
@@ -69,6 +68,7 @@
         border: none;
         border-bottom: 3px solid #ccc;
         font-family: 'Kanit', sans-serif;
+        background-color: transparent;
     
     }
     select option{
@@ -87,10 +87,18 @@
     .info{
         width: 80%;
     }
+    .section{
+        margin-bottom: 2%;
+        background-color: #ffffffe3;
+        border-radius: 5px;
+        padding: 4%;
+        padding-bottom: 8%;
+        padding-right: 5%;
+    }
     .image img {
         align-items: center;
-        width: 180px;
-        height:190px;
+        width: 210px;
+        height:210px;
        border-radius: 8px;
     }
     .btn_form {
@@ -98,7 +106,7 @@
     text-align: center;
     display: block;
     padding: 14px;
-    width: 51%;
+    width: 70%;
     color: #ffffff;
     background-color: var(--primary);
     border-radius: 8px;
@@ -111,7 +119,7 @@
     }
     
     .btn_form:hover {
-        background-color: var(--background);
+        background-color: #ffffffe3;
         color: var(--primary);
         border: 1px solid var(--primary);
     }
@@ -127,10 +135,12 @@
         margin: 0 0 20px 0;
         padding: 0;
         box-sizing: border-box;
+        background-color: transparent;
     }
       .field input{
         margin-left: 25px;
-    
+        background-color: transparent;
+
       }
       .field label {
         color: #560D0D;
@@ -163,19 +173,20 @@
     
     /* radio btn */
     .wrapper {
+        margin-left: 2%;
         float: left;
-        padding: 25px;
-        height:85px ;   
+        /* padding: 25px; */
+        /* height:85px ;    */
         width: 35%;
         display: inline-flex;
-        background: var(--background);
+        background-color: transparent;
         align-items: center;
         justify-content: space-evenly;
         border-radius: 5px;
     }
     
     .wrapper .option {
-        background: var(--background);
+        background:#ffffffe3;
         height: 100%;
         width: 100%;
         display: flex;
@@ -187,6 +198,8 @@
         padding: 0 10px;
         border: 2px solid lightgrey;
         transition: all 0.3s ease;
+        margin-top: 7%;
+        padding: 3%;
         
     }
     
@@ -250,7 +263,7 @@
         padding: 14px;
         align-items: center;
         color: #ffffff;
-        background-color: var(--primary);
+        background-color: var(--primary_transparent);
         border-radius: 8px;
         font-weight: 600;
         transition: box-shadow 200ms ease-out;
@@ -260,7 +273,7 @@
     .buttonclass{
         text-align: center;
         margin-bottom : 35px;  
-}
+    }
     .btn:hover {
         background-color: var(--background);
         color: var(--primary);
@@ -269,12 +282,16 @@
     
     .bdaygender{
         display: inline;
-     
+        background-color: #560D0D;
      }
      .bday{
          float: left;
          margin-right: 20px;
-         
+         background-color: transparent;
+         /* background-color: #560D0D; */
+     }
+     .bday input{
+        background-color: transparent;
      }
      
      

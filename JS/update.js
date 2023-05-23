@@ -136,7 +136,6 @@ var studentEmailInput = document.getElementById('StudentEmail');
     studentEmailInput.focus();
     return;
     }
-   
   return true;
 };
 document.getElementById('update').addEventListener('click',()=>{

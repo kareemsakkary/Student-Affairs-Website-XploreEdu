@@ -15,12 +15,11 @@
 // }, 2000);
 
 function load_all(){
-    fetch('/getStudents')
+    fetch('/xploreedu/getStudents/')
     .then(response => response.json())
     .then(data => {
         arr = data['students']
         for ( studu in arr){
-            console.log(arr[studu].id)
             all_data[arr[studu].id] = arr[studu];
         }
         search_function();

@@ -1,143 +1,113 @@
+{% extends 'students/index.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block head %}
   <title>Update Data</title>
-  <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
   <link rel="stylesheet" href="{% static 'CSS/update.css' %}">
-  <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet"  href="{% static 'CSS/navbar.css' %}">
   <script src="{% static 'JS/main.js' %}"></script>
+{% endblock head %}
 
-
-</head>
-
-<body>
-  <header>
-    <a href="index.html" class="logo"> <img height="100" width="300" src="{% static 'img/logo.png' %}" alt="Website Logo" /></a>
-    <div class="menu">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <nav class="nav-bar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="add_student.html">Add Students</a></li>
-        <li><a href="view_active.html">View Active Students</a></li>
-        <li><a href="view_all.html">View All Students</a></li>
-      </ul>
-    </nav>
-  </header>
+{% block body %}
   <div id="header">Update Student Data</div>
   <br>
-  <form method="POST" action="profile.html">
-    {% csrf_token %}
+  <form method="" action="/xploreedu/profile/">
     <div class="image">
-      <img id="pic" src="{% static 'img/default pp.png' %}" style="align-items:center;" />
+      <img id="pic" src="{%static 'img/default pp.png'%}" style="align-items:center;" />
       <br>
       <button class="btn_form" type="button" onclick="clickOn('profilePic');">Add Image</button>
       <input id="profilePic" class="file-upload-input" type='file' onchange="readURL(this,'pic');" accept="image/*" />
     </div>
     <div class="info">
-      <h1> Personal Info </h1>
-      <br><br>
-      <div >
-        <label for="StudentID"> ID </label>
-        <input type="number" name="id" id="StudentID"  class="readOnly"  readonly />
-      </div>
-      <br />
-      <div class="field">
-        <input type="text" id="StudentName" required />
-        <label for="StudentName"> Name </label>
+      <div class="section">
+        <h1> Personal Info </h1>
+        <div >
+          <label for="StudentID"> ID </label>
+          <input type="number" name="id" id="StudentID"  class="readOnly"  readonly />
+        </div>
+        <br />
+        <div class="field">
+          <input type="text" id="StudentName" required />
+          <label for="StudentName"> Name </label>
 
-      </div>
-      <br>
-      <div class="bdaygender">
-        <div class="bday" style="width:50%;">
-          <label for="StudentBDate"> Birth Date </label>
-          <input type="date" min="1950-01-01" max="2010-01-01" id="StudentBDate"  required />
         </div>
         <br>
-        <div class="wrapper" style="width:35%;">
-          <input type="radio" id="option-1" value="Male"  disabled>
-          <label for="option-1" class="option option-1">
-            <div class="dot"></div>
-            Male
-          </label>
-          <input type="radio" id="option-2" value="Female"  disabled>
-          <label for="option-2" class="option option-2">
-            <div class="dot"></div>
-            Female
-          </label>
+        <div class="bdaygender">
+          <div class="bday" style="width:50%;">
+            <label for="StudentBDate"> Birth Date </label>
+            <input type="date" min="1950-01-01" max="2010-01-01" id="StudentBDate" required />
+          </div>
+          <br>
+          <div class="wrapper" style="width:35%;">
+            <input type="radio" id="option-1" value="Male" disabled>
+            <label for="option-1" class="option option-1">
+              <div class="dot"></div>
+              Male
+            </label>
+            <input type="radio" id="option-2" value="Female" disabled>
+            <label for="option-2" class="option option-2">
+              <div class="dot"></div>
+              Female
+            </label>
+          </div>
         </div>
       </div>
-      <h1> <br><br><br><br>Educational Info</h1>
-      <br><br>
-      <div class="field">
-        <input type="number" min="0" max="4" step="0.01" id="StudentGPA"  required />
-        <label for="StudentGPA"> GPA </label>
-      </div>
-      <br>
-      <div>
-        <label for="level"> Level </label>
-        <select id="level" required>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
+      <div class="section">
+        <h1>Educational Info</h1>
+        <br>
+        <div class="field">
+          <input type="number" min="0" max="4" step="0.01" id="StudentGPA" required />
+          <label for="StudentGPA"> GPA </label>
+        </div>
+        <br>
+        <div>
+          <label for="level"> Level </label>
+          <select id="level" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
 
-        </select>
-      </div>
-      <br>
-      <div>
+          </select>
+        </div>
+        <br>
+        <div>
 
-        <label for="status"> Status </label>
-        <select class="inp" id="status">
-          <option value="Active" >Active</option>
-          <option value="Inactive" >Inactive</option>
-        </select>
+          <label for="status"> Status </label>
+          <select class="inp" id="status">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <label for="deps"> Department </label>
+          <input type="text" class="readOnly" value="General" readonly id="deps" />
+        </div>
       </div>
-      <br>
-      <div>
-        <label for="deps"> Department </label>
-        <input type="text" class="readOnly"  readonly id="deps" />
-      </div>
-      <br><br><br>
-      <h1> Contact Info</h1>
-      <br><br>
-      <div class="field">
-        <input type="tel" class="form__field"  maxlength="11" onkeypress='validate(event)'
-          id="StudentNumber" required /> <label for="StudentNumber"> Phone Number </label>
-      </div>
-      <br />
-      <div class="field">
-        <input type="email" class="inp" id="StudentEmail" required />
-        <label for="StudentEmail"> Email </label>
-      </div>
-
-      <br />
-     <div class="buttonclass">
-        <input type="submit" class="btn" placeholder="Update" id="update">
-        <input type="submit" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete"
-          id="delete"
-          formaction="view_all.html">
-     </div>
+      <div class="section">
+        <h1> Contact Info</h1>
+        <br><br>
+        <div class="field">
+          <input type="tel" class="form__field"  maxlength="11" onkeypress='validate(event)'
+            id="StudentNumber" required /> <label for="StudentNumber"> Phone Number </label>
+        </div>
+        <br />
+        <div class="field">
+          <input type="email" class="inp" id="StudentEmail" required />
+          <label for="StudentEmail"> Email </label>
+        </div>
+    </div>
+    
+    <div class="buttonclass">
+      <input type="submit" class="btn" placeholder="Update" id="update">
+      <input type="submit" class="btn" onclick="deleteStudent()" name="delete" value="Delete" placeholder="Delete"
+        id="delete"
+        formaction="/xploreedu/view_all/">
+    </div>
     </div>
   </form>
-  <footer>
-    <p>Copyright &copy; 2023 The President and Fellows of the College </p>
-  </footer>
   <script>var student_id = {{ student.id }};</script>
-  <script src="{% static 'JS/home.js' %}"></script>
+  <script src="{%static 'JS/home.js'%}"></script>
   <script src="{% static 'JS/update.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock body %}

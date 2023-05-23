@@ -1,14 +1,13 @@
-{% extends 'students/index.html' %}
 {% load static %}
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Homepage</title>
     <meta name="Description" content="Students Affair Homepage" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="{%static 'img/icon.png'%}" />
-    <link rel="stylesheet" href="{%static 'CSS/Homepage.css'%}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Homepage.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;600&display=swap" rel="stylesheet">
@@ -22,21 +21,21 @@
       <div class="row">
         <div class="card">
           <div class="site">Human Resources Website</div>
-          <img src="{%static 'img/HR.jpg'%}">
+          <img src="{% static 'img/HR.jpg' %}">
         </div>
         <div class="card">
           <div class="site">Students Affairs Website</div>
-          <a href="/xploreedu/">
+          <a href="index.html">
             <img src="{% static 'img/student.jpg' %}">
           </a>
         </div>
         <div class="card">
           <div class="site">Higher Studies Website</div>
-          <img src="{%static 'img/higher_studies.jpg'%}">
+          <img src="{% static 'img/higher_studies.jpg' %}">
         </div>
         <div class="card">
           <div class="site">Laboratory Tracking Website</div>
-          <img src="{%static 'img/lab.jpg' %}">
+          <img src="{% static 'img/lab.jpg' %}">
         </div>
       </div>
       <footer>

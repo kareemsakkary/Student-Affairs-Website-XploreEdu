@@ -40,34 +40,29 @@ function setStudent(data, callback) {
   var jsonData = JSON.stringify(data);
   xhr.send(jsonData);
 }
+all_data = {}
+student = {}
+fetch('/xploreedu/getStudents/')
+.then(response => response.json())
+.then(data => {
+    arr = data['students']
+    for ( studu in arr){
+        all_data[arr[studu].id] = arr[studu];
+    } 
+    // console.log(all_data[student_id])
+    student = all_data[student_id]
+  })
 
-function getStudents(callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/getStudents', true);
-  
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-          var response = JSON.parse(xhr.responseText);
-          var students = response.students;  // Assuming the response is in JSON format with a 'students' key
-          callback(students);  // Invoke the callback function with the students data
-      }
-  };
-  xhr.send();
-}
-var all_data = {};
-function set_all_data(students) {
-  for(const student of students){
-      all_data[student.id] = student;
-  }
-}
-getStudents(set_all_data);
+
+
 
 
 window.onload = function(){
-    student = all_data[student_id]
+    console.log(student)
     //checks if student exists
-    if (student == undefined)
+    if (student == undefined){
         return;
+      }
     //display student info
     document.getElementById("StudentID").value = student_id;
     document.getElementById("StudentName").value = student["name"];
@@ -96,9 +91,8 @@ window.onload = function(){
       }else if(student['gender']=='Female'){
         document.getElementById("option-2").checked= true;
     }
-
-
 }
+
 var clickOn = function(str){
   document.getElementById(str).click();
 }
@@ -112,14 +106,12 @@ function readURL(input , str) {
           // $('#img')
           //     .attr('src', e.target.result)
       };
-
       reader.readAsDataURL(input.files[0]);
   }
 }
 
 function validate(evt) {
   var theEvent = evt || window.event;
-
   // Handle paste
   if (theEvent.type === 'paste') {
       key = event.clipboardData.getData('text/plain');

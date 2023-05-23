@@ -21,6 +21,7 @@ body {
 body{
     font-family: 'Kanit', sans-serif;
     background: url(../img/background.jpg);
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

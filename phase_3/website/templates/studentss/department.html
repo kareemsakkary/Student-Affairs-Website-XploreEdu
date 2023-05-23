@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Student Department</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/depart.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;600&display=swap" rel="stylesheet">
+    <script src="{% static 'JS/main.js' %}"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="logo">
+        <img height="100" width="300" src="{% static 'img/logo.png' %}" alt="Website Logo"
+      /></a>
+      <div class="menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav class="nav-bar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="add_student.html">Add Students</a></li>
+          <li><a href="view_active.html">View Active Students</a></li>
+          <li><a href="view_all.html">View All Students</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div id="header">Edit Student Department</div>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form__">
+          <div class="info">
+            <div>
+              <b>ID</b>
+              <p>
+                <label id="studid" for="id"></label> <!-- ID -->
+                <input type="hidden" name="id" id="submit_id"/>
+              </p>
+              <hr />
+            </div>
+            <div>
+              <b>Name</b>
+              <p>
+                <label id="studname" for="studname"> </label> <!--name-->
+              </p>
+              <hr />
+            </div>
+            <div>
+              <label for="deps"> <b>Department</b> </label>
+              <select class="form-control" id="deps" required>
+                <option value="General">General</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="Data Science">Data Science</option>
+              </select>
+            </div>
+          </div>
+          <br />
+        </div>
+        <button
+          class="btn"
+          type="submit"
+          onclick="verify_level()"
+          formaction="profile.html"
+        >
+          Update
+        </button>
+      </form>
+    </div>
+
+    <footer>
+      <p>Copyright &copy; 2023 The President and Fellows of the College</p>
+    </footer>
+    <script>var student_id = {{ student.id }};</script>
+    <script src="{% static 'JS/depart.js' %}"></script>
+    <script src="{% static 'JS/home.js' %}"></script>
+
+  </body>
+</html>

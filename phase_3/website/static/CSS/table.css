@@ -3,6 +3,8 @@
   --darkprimary:#2b0606;
   --secondry: #EEE7E7;
   --background: #fff;
+  --trans:#ffffffe3;
+
   font-size:1.4vw;
 
 }
@@ -20,7 +22,7 @@
   font-size: 36px;
   width: 100%;
   text-align: center;
-  color:white;
+  color:#fff;
   font-family: 'Kanit', sans-serif;
 }
 .student_row{
@@ -39,19 +41,19 @@
 }
 .table-header{
   background-color: #560D0D;
-  color: white;
+  color: var(--trans);
   font-weight: bold;
 }
 #main_table th, #main_table td{
   padding: .5rem .5rem;
 }
 #main_table tbody tr:nth-of-type(odd){
- background-color: #f3f3f3;
+ background-color: var(--trans);
 }
 
 body{
-    background-color: var(--background);
-    background-image: none;
+    /* background-color: var(--background);
+    background-image: none; */
 }
   /*input css*/
 .btn{
@@ -72,7 +74,7 @@ body{
   cursor: not-allowed;
 }
 .btn:hover:enabled{
-    background-color: var(--background);
+    background-color: var(--trans);
     color : var(--primary);
     border: 1px solid var(--primary);
 }
@@ -90,7 +92,7 @@ input[type='radio'] {
 }
 .form-control:focus {
     color: #212529;
-    background-color: #fff;
+    background-color: var(--trans);
     border-color: 1px solid var(--secondry);
     outline: 0;
     box-shadow: 0 0 0 0.25rem white;

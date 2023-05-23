@@ -1,157 +1,124 @@
+{% extends 'students/index.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add students</title>
-  <link rel="icon" type="image/x-icon" href="img/icon.png">
-  <link rel="stylesheet" href="{% static 'CSS/navbar.css'%}">
-  <link rel="stylesheet" href="{% static 'CSS/forms.css' %}">
-  <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;600&display=swap" rel="stylesheet">
-  <script src="{% static 'JS/forms.js' %}"></script>
-
-</head>
-
-<body>
-  <header>
-    <a href="index.html" class="logo"> <img height="100" width="300" src="{% static 'img/logo.png' %}" alt="Website Logo" /></a>
-    <div class="menu">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+{% block head %}
+<title>Add students</title>
+<link rel="stylesheet" href="{%static 'CSS/navbar.css' %}">
+<link rel="stylesheet" href="{%static 'CSS/forms.css' %}">
+<link rel="stylesheet" href="{%static 'CSS/style.css' %}">
+<script src="{%static 'JS/forms.js'%}"></script>
+{% endblock head %}
+{% block body %}
+<div id="header">Add Students</div>
+<form id= "form" method="POST">
+  {% csrf_token %}
+  <div class="horz">
+    <div id="img_cont">
+      <img id="pic" src="{% static 'img/default pp.png' %}" alt="" />
+      <br>
+      <button class="btn_form" type="button" onclick="clickOn('profilePic');">Add Image</button>
+      <input id="profilePic" class="file-upload-input" type='file' name="pimg" onchange="readURL(this,'pic');" accept="image/*" />
     </div>
-    <nav class="nav-bar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="add_student.html">Add Students</a></li>
-        <li><a href="view_active.html">View Active Students</a></li>
-        <li><a href="view_all.html">View All Students</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div id="header">Add Students</div>
-  <form id= "form" method="POST">
-    {% csrf_token %}
-    <div class="horz">
-      <div id="img_cont">
-        <img id="pic" src="{% static 'img/default pp.png' %}" alt="" />
-        <br>
-        <button class="btn_form" type="button" onclick="clickOn('profilePic');">Add Image</button>
-        <input id="profilePic" class="file-upload-input" type='file' name="pimg" onchange="readURL(this,'pic');" accept="image/*" />
-      </div>
-      <div id="in_cont">
-        <div class="section">
-          <div class="infotype">Personal Info</div>
-          <div class="info">
-            <div class="form__group field formIn">
-              <input type="text" autocomplete="off" id="studentName" name="studentName" class="form__field" placeholder="name"
-                required />
-              <label for="studentName" class="form__label">Student Name</label>
+    <div id="in_cont">
+      <div class="section">
+        <div class="infotype">Personal Info</div>
+        <div class="info">
+          <div class="form__group field formIn">
+            <input type="text" autocomplete="off" id="studentName" name="studentName" class="form__field" placeholder="name"
+              required />
+            <label for="studentName" class="form__label">Student Name</label>
+          </div>
+          <br>
+          <div class="horz1">
+            <div id="bdate" class="form__group field formIn">
+              <input type="date" min="1950-01-01" max="2010-01-01" autocomplete="off" id="Bdate" name="Bdate"
+                class="form__field" placeholder="studentBirthdate" required />
+              <label for="studentBirthdate" class="form__label">Birth Date</label>
             </div>
-            <br>
-            <div class="horz1">
-              <div id="bdate" class="form__group field formIn">
-                <input type="date" min="1950-01-01" max="2010-01-01" autocomplete="off" id="Bdate" name="Bdate"
-                  class="form__field" placeholder="studentBirthdate" required />
-                <label for="studentBirthdate" class="form__label">Birth Date</label>
-              </div>
-              <div class="wrapper">
-                <input type="radio" name="gender" id="option-1" value="Male" checked>
-                <input type="radio" name="gender" id="option-2" value="Female">
-                <label for="option-1" class="option option-1">
-                  <div class="dot"></div>
-                  <span>Male</span>
-                </label>
-                <label for="option-2" class="option option-2">
-                  <div class="dot"></div>
-                  <span>Female</span>
-                </label>
-              </div>
+            <div class="wrapper">
+              <input type="radio" name="gender" id="option-1" value="Male" checked>
+              <input type="radio" name="gender" id="option-2" value="Female">
+              <label for="option-1" class="option option-1">
+                <div class="dot"></div>
+                <span style="font-size:initial;">Male</span>
+              </label>
+              <label for="option-2" class="option option-2">
+                <div class="dot"></div>
+                <span style="font-size:initial;">Female</span>
+              </label>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="section">
-          <div class="infotype">Contact Info</div>
-          <div class="info">
-            <div class="form__group field formIn">
-              <input type="email" autocomplete="off"id ="email" name="studentEmail" class="form__field" placeholder="email"
-                required />
-              <label for="studentEmail" class="form__label">Student Email</label>
-            </div>
-            <br>
-            <div class="form__group field formIn">
-              <input type="tel" autocomplete="off" minlength="11" id="phone" maxlength="11" onkeypress='validate(event)' name="StudentPhone" class="form__field" placeholder="Phone"
-                required />
-              <label for="StudentPhone" class="form__label">Student Phone</label>
-            </div>
+      <div class="section">
+        <div class="infotype">Contact Info</div>
+        <div class="info">
+          <div class="form__group field formIn">
+            <input type="email" autocomplete="off"id ="email" name="studentEmail" class="form__field" placeholder="email"
+              required />
+            <label for="studentEmail" class="form__label">Student Email</label>
+          </div>
+          <br>
+          <div class="form__group field formIn">
+            <input type="tel" autocomplete="off" minlength="11" id="phone" maxlength="11" onkeypress='validate(event)' name="StudentPhone" class="form__field" placeholder="Phone"
+              required />
+            <label for="StudentPhone" class="form__label">Student Phone</label>
           </div>
         </div>
-
-        <div class="section">
-          <div class="infotype">Student Info </div>
-          <div class="info">
-            <div class="horz" style="margin-left: 0%;">
-              <div class="form__group field formIn" style="width: 20%;">
-                <input type="number" step="0.01" onchange='' min="0" max="4" onkeypress='validate(event);' autocomplete="off" id="GPA" name="studentGPA" class="form__field" placeholder="GPA"
-                  required />
-                <label for="studentGPA" class="form__label">GPA</label>
-              </div>
-              <div class="select_cont">
-                <label class="select" for="slct">
-                  <select id="level" name="level" onchange="level_change(this);"required="required">
-                    <option value="" disabled="disabled" selected="selected">Level</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                  <svg>
-                    <use xlink:href="#select-arrow-down"></use>
-                  </svg>
-                </label>
-              </div>
-              <div class="select_cont">
-                <label class="select" for="slct">
-                  <select id="department" name="Department" required="required" disabled>
-                    <option value="" disabled="disabled" selected="selected"><label for="deps">Department</option>
-                    <option value="General" disabled="disabled" > General </option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Artificial Intelligence">Artificial Intelligence</option>
-                    <option value="Information Technology"> Information Technology</option>
-                    <option value="Cyber Security"> Cyber Security</option>
-                    <option value="Data Science"> Data Science</option>
-                  </select>
-                  <svg>
-                    <use xlink:href="#select-arrow-down"></use>
-                  </svg>
-                </label>
-              </div>
-              <!-- SVG Sprites-->
-              <svg class="sprites">
-                <symbol id="select-arrow-down" viewbox="0 0 10 6">
-                  <polyline points="1 1 5 5 9 1"></polyline>
-                </symbol>
-              </svg>
-            </div>
-          </div>
-        </div> 
       </div>
-    </div>
-    <input type="submit" class="btn_form" style="width: 20%; margin-left: 40%;" >
-  </form>
-  <footer>
-    <p>Copyright &copy; 2023 The President and Fellows of the College</p>
-  </footer>
-  <script src="{% static 'JS/main.js' %}"></script>
-  <script src="{% static 'JS/home.js' %}"></script>
-</body>
 
-</html>
+      <div class="section">
+        <div class="infotype">Student Info </div>
+        <div class="info">
+          <div class="horz" style="margin-left: 0%;">
+            <div class="form__group field formIn" style="width: 20%;">
+              <input type="number" step="0.01" onchange='' min="0" max="4" onkeypress='validate(event);' autocomplete="off" id="GPA" name="studentGPA" class="form__field" placeholder="GPA"
+                required />
+              <label for="studentGPA" class="form__label">GPA</label>
+            </div>
+            <div class="select_cont">
+              <label class="select" for="slct">
+                <select id="level" name="level" onchange="level_change(this);"required="required">
+                  <option value="" disabled="disabled" selected="selected">Level</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <svg>
+                  <use xlink:href="#select-arrow-down"></use>
+                </svg>
+              </label>
+            </div>
+            <div class="select_cont">
+              <label class="select" for="slct">
+                <select id="department" name="Department" required="required" disabled>
+                  <option value="" disabled="disabled" selected="selected"><label for="deps">Department</option>
+                  <option value="General" disabled="disabled" > General </option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Artificial Intelligence">Artificial Intelligence</option>
+                  <option value="Information Technology"> Information Technology</option>
+                  <option value="Cyber Security"> Cyber Security</option>
+                  <option value="Data Science"> Data Science</option>
+                </select>
+                <svg>
+                  <use xlink:href="#select-arrow-down"></use>
+                </svg>
+              </label>
+            </div>
+            <!-- SVG Sprites-->
+            <svg class="sprites">
+              <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                <polyline points="1 1 5 5 9 1"></polyline>
+              </symbol>
+            </svg>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <input type="submit" class="btn_form" style="width: 20%; margin-left: 40%;" >
+</form>
+<script src="{% static 'JS/main.js' %}"></script>
+<script src="{% static 'JS/home.js' %}"></script>
+{% endblock body %}

@@ -1,8 +1,10 @@
 :root {
     --primary: #560D0D;
+    --primary_transparent : #560d0df8;
     --darkprimary:#2b0606;
     --secondry: #EEE7E7;
     --background: #fff;
+    --background_transparent:#ffffffe3;
 }
 
 *{
