@@ -2,7 +2,7 @@ var all_data = {};
 
 function setStudent(data, callback) {
     var xhr = new XMLHttpRequest();
-    var url = '/setStudent';
+    var url = '/xploreedu/setStudent/';
 
     xhr.open('POST', url, true);
 
@@ -23,19 +23,6 @@ function setStudent(data, callback) {
     xhr.send(jsonData);
 }
 
-function getStudents(callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/getStudents', true);
-    
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            var students = response.students;  // Assuming the response is in JSON format with a 'students' key
-            callback(students);  // Invoke the callback function with the students data
-        }
-    };
-    xhr.send();
-}
 
 
 const tbdoy = document.getElementById('main_tbody')

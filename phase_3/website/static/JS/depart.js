@@ -1,10 +1,20 @@
+all_data = {}
+student = {}
+fetch('/xploreedu/getStudents/')
+.then(response => response.json())
+.then(data => {
+    arr = data['students']
+    for ( studu in arr){
+        all_data[arr[studu].id] = arr[studu];
+    } 
+    // console.log(all_data[student_id])
+    student = all_data[student_id]
+})
 
 function setStudent(data, callback) {
     var xhr = new XMLHttpRequest();
-    var url = '/setStudent';
-
+    var url = '/xploreedu/setStudent/';
     xhr.open('POST', url, true);
-
     // Set the appropriate headers for sending JSON data
     xhr.setRequestHeader('Content-Type', 'application/json');
 
@@ -22,30 +32,11 @@ function setStudent(data, callback) {
     xhr.send(jsonData);
 }
 
-function getStudents(callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/getStudents', true);
-    
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            var students = response.students;  // Assuming the response is in JSON format with a 'students' key
-            callback(students);  // Invoke the callback function with the students data
-        }
-    };
-    xhr.send();
-}
-var all_data = {};
-function set_all_data(students) {
-    for(const student of students){
-        all_data[student.id] = student;
-    }
-}
-getStudents(set_all_data);
+
 
 
 window.onload = function(){
-    student = all_data[student_id];
+    console.log(student)
     //checks if student exists
     if (student == undefined)
         return;
