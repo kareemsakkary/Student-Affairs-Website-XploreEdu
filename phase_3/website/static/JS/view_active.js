@@ -1,5 +1,5 @@
 function load_active(){
-    fetch('/getStudents')
+    fetch('/xploreedu/getStudents/')
     .then(response => response.json())
     .then(data => {
         arr = data['students']
