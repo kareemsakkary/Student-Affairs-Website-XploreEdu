@@ -4,7 +4,6 @@ function load_active(){
     .then(data => {
         arr = data['students']
         for ( studu in arr){
-            console.log(arr[studu].id)
             all_data[arr[studu].id] = arr[studu];
         }
         search_function_active()

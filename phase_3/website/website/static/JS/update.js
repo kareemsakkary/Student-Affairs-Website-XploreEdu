@@ -199,7 +199,6 @@ document.getElementById('update').addEventListener('click',()=>{
       delete data[student_id];
       student_id=document.getElementById("StudentID").value;
       }
-      console.log(student)
     student['name'] = document.getElementById("StudentName").value;
     student['bdate'] = document.getElementById("StudentBDate").value;
     student['gpa'] = document.getElementById("StudentGPA").value;

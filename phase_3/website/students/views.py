@@ -29,7 +29,6 @@ def add_student(request):
             img = 'default pp.png'
         if depart == None:  
             depart = 'General'
-        print(request.FILES.get("pimg"))
         data = Student(
             name = request.POST.get('studentName'),
             gender = request.POST.get('gender'),
