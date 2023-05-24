@@ -1,6 +1,22 @@
+all_data = {}
+student = {}
+
+function load(){
+  fetch('/xploreedu/getStudents/')
+  .then(response => response.json())
+  .then(data => {
+    arr = data['students']
+    for ( studu in arr){
+      all_data[arr[studu].id] = arr[studu];
+    } 
+    student = all_data[student_id]
+    display_student();
+  })
+}
+
 function deletestud(data, callback){
   var xhr = new XMLHttpRequest();
-  var url = '/delete';
+  var url = '/xploreedu/delete/';
   xhr.open('POST', url, true);
   // Set the appropriate headers for sending JSON data
   xhr.setRequestHeader('Content-Type', 'application/json');
@@ -20,7 +36,7 @@ function deletestud(data, callback){
 }
 function setStudent(data, callback) {
   var xhr = new XMLHttpRequest();
-  var url = '/setStudent';
+  var url = '/xploreedu/setStudent/';
 
   xhr.open('POST', url, true);
 
@@ -40,26 +56,10 @@ function setStudent(data, callback) {
   var jsonData = JSON.stringify(data);
   xhr.send(jsonData);
 }
-all_data = {}
-student = {}
-fetch('/xploreedu/getStudents/')
-.then(response => response.json())
-.then(data => {
-    arr = data['students']
-    for ( studu in arr){
-        all_data[arr[studu].id] = arr[studu];
-    } 
-    // console.log(all_data[student_id])
-    student = all_data[student_id]
-  })
 
 
-
-
-
-window.onload = function(){
-    console.log(student)
-    //checks if student exists
+function display_student(){
+//checks if student exists
     if (student == undefined){
         return;
       }
@@ -90,7 +90,11 @@ window.onload = function(){
         document.getElementById("option-1").checked= true;
       }else if(student['gender']=='Female'){
         document.getElementById("option-2").checked= true;
-    }
+    }  
+}
+
+window.onload = function(){
+    load();
 }
 
 var clickOn = function(str){
@@ -185,7 +189,6 @@ var studentEmailInput = document.getElementById('StudentEmail');
     studentEmailInput.focus();
     return;
     }
-   
   return true;
 };
 document.getElementById('update').addEventListener('click',()=>{
@@ -221,10 +224,10 @@ document.getElementById('update').addEventListener('click',()=>{
   }
         
 );
+
 function deleteStudent(){
   if (confirm("Are you sure you want to delete this student?")==true){
     student = all_data[student_id]
     deletestud(student,function(response){});
   }
-  
 }

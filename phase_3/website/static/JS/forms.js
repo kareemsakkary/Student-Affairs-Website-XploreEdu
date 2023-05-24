@@ -35,40 +35,6 @@ function validate(evt) {
 
 
 
-
-// var subm = function(){
-//     var $myForm = document.getElementsByTagName('form');
-//     if(! $myForm[0].checkValidity()){
-//         document.getElementById("sub").click();
-//         console.log(getData(),size());
-//     }else{
-//         var li = document.getElementsByTagName("input");
-//         for(var i of li){
-//             var name = i.getAttribute("id");
-//             var val = i.value;
-//             // console.log(name);
-//             if(keys.includes(name)){
-//                 student[name] = val
-//             }
-//         }
-
-//         var li = document.getElementsByTagName("select");
-//         for(var i of li){
-//             var name = i.getAttribute("id");
-//             var val = i.value;
-//             // console.log(name);
-//             if(keys.includes(name)){
-//                 student[name] = val
-//             }
-//         }
-//         student['status'] = 'Active';
-//         student['gender'] = document.querySelector('input[name="gender"]:checked').value;
-//         var id = getID(size());
-//         setStudent(id,student);
-//         location.replace("view_all.html");
-//     }
-// }
-
 var level_change = function(sel){
     var dep = document.getElementById("department");
     if(sel.value ==='1' || sel.value==='2'){

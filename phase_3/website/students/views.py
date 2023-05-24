@@ -24,9 +24,12 @@ def add_student(request):
         # email =request.POST.get('studentEmail')
         # level = request.POST.get('level')
         depart = request.POST.get('Department')
+        img = request.FILES.get('pimg')
+        if img == None:
+            img = 'default pp.png'
         if depart == None:  
             depart = 'General'
-        print(request.POST.get("pimg"))
+        print(request.FILES.get("pimg"))
         data = Student(
             name = request.POST.get('studentName'),
             gender = request.POST.get('gender'),
@@ -36,7 +39,7 @@ def add_student(request):
             email = request.POST.get('studentEmail'),
             level = request.POST.get('level'),
             department = depart,
-            picture = request.FILES['pimg']
+            picture = img
         )
         data.save()
     return render(request, 'students/add_student.html')
@@ -87,7 +90,6 @@ def setStudent(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            # print(data)
             updated_data = {
                 'id': data.get('id'),
                 'name': data.get('name'),
@@ -99,6 +101,7 @@ def setStudent(request):
                 'level': data.get('level'),
                 'status': data.get('status'),
                 'department': data.get('department'),
+                # 'picture': data.get('pimg')
             }
             try:
                 student_obj = Student.objects.get(id=updated_data['id'])

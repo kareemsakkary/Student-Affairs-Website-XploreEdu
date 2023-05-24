@@ -44,8 +44,8 @@ function search_function(){
     set_rows(valid_data,false)
 }
 search_input.addEventListener('keyup', (e) => {
-    search_function()
     load_all()
+    search_function()
 })
 
 const activate_button = document.getElementById('activate')
@@ -60,7 +60,7 @@ function alter_state(state){
     const student_data = all_data[id]
     student_data['status'] = state
     setStudent(student_data,function(response){});
-    // search_function()
+    search_function()
     const active_row = document.getElementById(id);
     id_input = active_row.querySelector('input[name="id"]')
     id_input.checked = true

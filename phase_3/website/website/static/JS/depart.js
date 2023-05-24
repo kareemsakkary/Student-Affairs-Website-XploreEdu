@@ -1,16 +1,18 @@
 all_data = {}
 student = {}
-fetch('/xploreedu/getStudents/')
-.then(response => response.json())
-.then(data => {
-    arr = data['students']
-    for ( studu in arr){
-        all_data[arr[studu].id] = arr[studu];
-    } 
-    // console.log(all_data[student_id])
-    student = all_data[student_id]
-})
-
+function load(){
+    fetch('/xploreedu/getStudents/')
+    .then(response => response.json())
+    .then(data => {
+        arr = data['students']
+        for ( studu in arr){
+            all_data[arr[studu].id] = arr[studu];
+        } 
+        student = all_data[student_id]
+        display();
+    })
+}
+    
 function setStudent(data, callback) {
     var xhr = new XMLHttpRequest();
     var url = '/xploreedu/setStudent/';
@@ -32,11 +34,7 @@ function setStudent(data, callback) {
     xhr.send(jsonData);
 }
 
-
-
-
-window.onload = function(){
-    console.log(student)
+function display(){
     //checks if student exists
     if (student == undefined)
         return;
@@ -46,8 +44,13 @@ window.onload = function(){
     document.getElementById("deps").value = student['department'];
 }
 
+
+window.onload = function(){
+    load();
+}
+
 function verify_level(){
-    student = all_data[student_id];
+    // student = all_data[student_id];
     //checks if student exists
     if (student == undefined){
         alert("Student doesn\'t exist");

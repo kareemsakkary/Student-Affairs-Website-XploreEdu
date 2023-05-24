@@ -48,7 +48,10 @@
   padding: .5rem .5rem;
 }
 #main_table tbody tr:nth-of-type(odd){
- background-color: var(--trans);
+  background-color: var(--trans);
+}
+#main_tbody tr:nth-of-type(even){
+  background-color: #c6c0c0ee;
 }
 
 body{
