@@ -41,7 +41,7 @@ function setStudent(data, callback) {
   xhr.open('POST', url, true);
 
   // Set the appropriate headers for sending JSON data
-  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Content-Type', 'multipart/form-data');
 
   xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -53,8 +53,8 @@ function setStudent(data, callback) {
           }
       }
   };
-  var jsonData = JSON.stringify(data);
-  xhr.send(jsonData);
+  // var jsonData = JSON.stringify(data);
+  xhr.send(data);
 }
 
 
@@ -106,7 +106,7 @@ function readURL(input , str) {
 
       reader.onload = function (e) {
           document.getElementById(str).setAttribute('src', e.target.result);
-          student['pic'] = e.target.result;
+          // student['pic'] = e.target.result;
           // $('#img')
           //     .attr('src', e.target.result)
       };
@@ -207,6 +207,7 @@ document.getElementById('update').addEventListener('click',()=>{
     student['level'] = document.getElementById("level").value;
     student['status'] = document.getElementById("status").value;
     student['department'] = document.getElementById("deps").value;
+    student['picture'] = document.getElementById("profilePic").files[0]
     if(document.getElementById('option-1').checked){
       student['gender']="Male";
     }else if(document.getElementById('option-2').checked){
@@ -216,8 +217,18 @@ document.getElementById('update').addEventListener('click',()=>{
     alert("Student Updated Successfully");
         
   } 
+    data = new FormData();
+    for(var key in student){
+      data.append(key,student[key])
+    }
+    console.log(data)
+    csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
+					
+    //console.log(csrf_token);
+    
+    data.append("csrfmiddlewaretoken", csrf_token);
     //update the database
-    setStudent(student,function(response){});
+    setStudent(data,function(response){});
     //makes the current id a url parameter
     document.getElementById("StudentID").value = student_id;
   }

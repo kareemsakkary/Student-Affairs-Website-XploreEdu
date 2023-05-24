@@ -87,26 +87,26 @@ def getStudents(request):
 @csrf_exempt
 def setStudent(request):
     if request.method == 'POST':
+        print(request.POST.get("name"))
         try:
-            data = json.loads(request.body)
             updated_data = {
-                'id': data.get('id'),
-                'name': data.get('name'),
-                'bdate': data.get('bdate'),
-                'gpa': data.get('gpa'),
-                'gender': data.get('gender'),
-                'phone': data.get('phone'),
-                'email': data.get('email'),
-                'level': data.get('level'),
-                'status': data.get('status'),
-                'department': data.get('department'),
-                # 'picture': data.get('pimg')
+                'id': request.POST.get('id'),
+                'name': request.POST.get('name'),
+                'bdate': request.POST.get('bdate'),
+                'gpa': request.POST.get('gpa'),
+                'gender': request.POST.get('gender'),
+                'phone': request.POST.get('phone'),
+                'email': request.POST.get('email'),
+                'level': request.POST.get('level'),
+                'status': request.POST.get('status'),
+                'department': request.POST.get('department'),
+                'picture': request.FILES.get('picture')
             }
             try:
                 student_obj = Student.objects.get(id=updated_data['id'])
-                student_obj.img = data.get('picture')
                 for key, value in updated_data.items():
-                    setattr(student_obj, key, value)
+                    if(value!= None):
+                        setattr(student_obj, key, value)
                 student_obj.save()
                 response = {'message': 'Student updated successfully'}
                 return JsonResponse(response, status=200)
