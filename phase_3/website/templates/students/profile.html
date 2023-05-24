@@ -16,7 +16,7 @@
         <div>
           <form method="POST" action="/xploreedu/update/">
             {% csrf_token %}
-            <input type="hidden" name="id" id="submit_id" value="{{student.id}}"/>
+            <input type="hidden" name="id" id="submit_id" />
             <button
               class="btn"
               type="submit"
@@ -31,11 +31,11 @@
       <div class="infotype">Personal Info</div>
       <div class="info">
         <b>Name</b>
-        <label id="studname">{{student.name}}</label>
+        <label id="studname"></label>
         <hr />
-        <b>Date of Birth</b><label id="studbirth">{{student.bdate}} </label>
+        <b>Date of Birth</b><label id="studbirth"></label>
         <hr />
-        <b>Gender</b><label id="studgender">{{student.gender}} </label>
+        <b>Gender</b><label id="studgender"></label>
         <hr />
       </div>
       <br />
@@ -43,9 +43,9 @@
     <div class="continfo">
       <div class="infotype">Contact Info</div>
       <div class="info">
-        <b>Email</b><label id="studmail">{{student.email}} </label>
+        <b>Email</b><label id="studmail"></label>
         <hr />
-        <b>Mobile Number</b><label id="studphone">{{student.phone}} </label>
+        <b>Mobile Number</b><label id="studphone"></label>
         <hr />
         <br />
       </div>
@@ -53,21 +53,22 @@
     <div class="studinfo">
       <div class="infotype">Student Info</div>
       <div class="info">
-        <b>ID</b><label id="studid">{{student.id}} </label>
+        <b>ID</b><label id="studid"></label>
         <hr />
-        <b>GPA</b><label id="gpa">{{student.gpa}} </label>
+        <b>GPA</b><label id="gpa"></label>
         <hr />
-        <b>Level</b><label id="lvl">{{student.level}} </label>
+        <b>Level</b><label id="lvl"></label>
         <hr />
-        <b>Department</b><label id="depart">{{student.department}} </label>
+        <b>Department</b><label id="depart"></label>
         <hr />
-        <b>Status</b><label id="status">{{student.status}} </label>
+        <b>Status</b><label id="status"></label>
         <hr />
         <br />
       </div>
     </div>
   </div>
 </div>
+<script>var student_id = {{ student.id }};</script>
 <script src="{% static 'JS/home.js' %}"></script>
 <script src="{% static 'JS/profile.js'%}"></script>
 {% endblock body %}
