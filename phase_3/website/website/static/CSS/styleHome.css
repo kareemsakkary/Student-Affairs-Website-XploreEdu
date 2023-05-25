@@ -137,11 +137,11 @@ footer p{
     .nav-bar ul li a {
         margin-bottom: 15px;
     }
-    body span{
+    .container_home span{
         font-weight: 700;
         font-size: 50px;
     }
-    body p{
+    .container_home p{
         font-weight: 550;
         padding: 150px 100px;
         font-size: 28px;
