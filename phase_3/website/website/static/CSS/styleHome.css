@@ -3,6 +3,7 @@
     --darkprimary:#2b0606;
     --secondry: #EEE7E7;
     --background: #fff;
+    --trans:#ffffffe3;
 }
 *{
     padding: 0;
@@ -27,13 +28,13 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
-body span{
+.container_home span{
     text-align: center;
     font-size: 70px;
     color: var(--primary);
     font-weight: 800;
 }
-body p{
+.container_home p{
     text-align: center;
     font-size: 30px;
     color: var(--background);
@@ -79,7 +80,7 @@ header{
     transition: 0.5s;
 }
 
-.container{
+.container_home{
     flex: 1 0 auto;
 }
 
