@@ -16,10 +16,12 @@ function load(){
 function setStudent(data, callback) {
     var xhr = new XMLHttpRequest();
     var url = '/xploreedu/setStudent/';
-    xhr.open('POST', url, true);
-    // Set the appropriate headers for sending JSON data
-    xhr.setRequestHeader('Content-Type', 'application/json');
 
+    xhr.open('POST', url, true);
+
+    // Set the appropriate headers for sending JSON data
+    // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+    
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
@@ -30,8 +32,8 @@ function setStudent(data, callback) {
             }
         }
     };
-    var jsonData = JSON.stringify(data);
-    xhr.send(jsonData);
+    // var jsonData = JSON.stringify(data);
+    xhr.send(data);
 }
 
 function display(){
@@ -47,6 +49,7 @@ function display(){
 
 window.onload = function(){
     load();
+    
 }
 
 function verify_level(){
@@ -66,7 +69,12 @@ function verify_level(){
         alert('This student must be level 3');
     }
     //update the database
-    setStudent(student,function(response){});
+    data = new FormData();
+    for(var k in student){
+        data.append(k,student[k])
+    }
+    setStudent(data,function(response){});
+    
     //makes the current id a url parameter
     document.getElementById("submit_id").value = student_id;
 }
