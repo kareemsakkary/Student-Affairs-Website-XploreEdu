@@ -4,7 +4,7 @@ body {
 
 .horz {
     display: inline-flex;
-    width: 98%;
+    width: 96%;
     margin-top: 1%;
     margin-left: 4%;
 }
@@ -16,13 +16,13 @@ body {
 
 #img_cont{
     width: 15%;
-    margin-right: 1%;
+    margin-right: 3%;
     margin-top: 1%;
 
     /* height: 15px; */
 }
 #in_cont{
-    width: 70%;
+    width: 80%;
 }
 div img {
     align-self: center;
