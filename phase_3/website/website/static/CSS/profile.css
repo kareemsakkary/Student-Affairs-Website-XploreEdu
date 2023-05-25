@@ -112,7 +112,13 @@ hr{
     flex-direction: column;
   }
   .card{
-    width: 100%;
-
+    width: 98%;
+  }
+  .personalinfo,
+  .studinfo,
+  .continfo{
+    width: 98%;
+    margin-left: 1;
+    /* background-color: aqua; */
   }
 }

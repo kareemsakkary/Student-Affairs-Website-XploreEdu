@@ -280,6 +280,9 @@ div img {
 @media(max-width: 800px){
     .horz{
         display: block;
+        width: 97%;
+        margin-left: 3%;
+        /* margin-right: 1%; */
         /* text-align: center; */
     }
     #img_cont{
